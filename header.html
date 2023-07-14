@@ -1,3 +1,42 @@
+<style>
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .cart_view {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  transform: translateY(40px);
+  z-index: 1;
+  margin-left: -250px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .cart_view::after {
+  content: "";
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .cart_view {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+<link href="./home.css" rel="stylesheet" />
 <nav class="home-centered">
               <div class="home-left">
                 <img
