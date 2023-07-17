@@ -3,5 +3,6 @@ id: 1
 description: Best of ducksploit
 price: 9.99
 image: https://ducksploit.com/public/playground_assets/pc-600h.png
+link: https://ducksploit.com
 featured: true
 type: software
