@@ -1,8 +1,8 @@
 name: Huge Windows App
-id: win2
-description: Best of ducksploit
+id: win1
+description: You are not a developer and you want a windows software? </br> this is made for you </br> infinite code length
 price: 80
-image: https://ducksploit.com/public/playground_assets/pc-600h.png
+image: assets/windows.png
 link: https://4re5team.github.io/index.html#services
 featured: true
 type: windows_service
