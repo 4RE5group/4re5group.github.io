@@ -1,0 +1,8 @@
+name: Small Windows App
+id: win1
+description: Best of ducksploit
+price: 30
+image: https://ducksploit.com/public/playground_assets/pc-600h.png
+link: https://4re5team.github.io/index.html#services
+featured: true
+type: windows_service
