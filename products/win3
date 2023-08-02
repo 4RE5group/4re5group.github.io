@@ -1,0 +1,8 @@
+name: Big Windows App
+id: win3
+description: Best of ducksploit
+price: 50
+image: https://ducksploit.com/public/playground_assets/pc-600h.png
+link: https://4re5team.github.io/index.html#services
+featured: true
+type: windows_service
