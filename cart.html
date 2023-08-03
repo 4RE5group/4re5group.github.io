@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>cart - 4RE5 - Future of softwares</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta
+      name="description"
+      content="Home of 4RE5, a cyber-security and developers team"
+    />
+    <meta property="og:title" content="cart - 4RE5 - Future of softwares" />
+    <meta
+      property="og:description"
+      content="Home of 4RE5, a cyber-security and developers team"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+       }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./home.css" />
+  </head>
+  <script src="./cart/script.js"></script>
+  <body onload="load_cart()">
+    <div>
+      <link href="./cart.css" rel="stylesheet" />
+
+      <div class="cart-container">
+        
+
+        <script>
+        function httpGet(theUrl) {
+          let xmlHttpReq = new XMLHttpRequest();
+          xmlHttpReq.open("GET", theUrl, false);
+          xmlHttpReq.send(null);
+          return xmlHttpReq.responseText;
+        }
+        document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/header.html"))
+        </script>
+
+
+
+
+        <div style="height: auto;" class="cart-container02">
+          <div style="margin-top: 200px;" class="cart-container03">
+            <svg viewBox="0 0 1024 1024" class="cart-icon">
+              <path
+                d="M726 768q34 0 59 26t25 60-25 59-59 25-60-25-26-59 26-60 60-26zM42 86h140l40 84h632q18 0 30 13t12 31q0 2-6 20l-152 276q-24 44-74 44h-318l-38 70-2 6q0 10 10 10h494v86h-512q-34 0-59-26t-25-60q0-20 10-40l58-106-154-324h-86v-84zM298 768q34 0 60 26t26 60-26 59-60 25-59-25-25-59 25-60 59-26z"
+              ></path>
+            </svg>
+            <h1 class="cart-text01">Your cart</h1>
+          </div>
+          <div class="cart-container04">
+            <div class="cart-container05">
+              <span class="cart-text02">Product</span>
+              <span class="cart-text03">Price</span>
+              <span class="cart-text04">
+                <span>Quantity</span>
+                <br />
+              </span>
+              <span class="cart-text07">Total</span>
+            </div>
+            <div id="cart_list" style="overflow-y: scroll; display: flex;width: 100%;/* height: 500px; */flex-wrap: wrap;align-content: center;flex: 0 0 auto;width: 100%;height: auto;display: flex;max-width: 1000px;align-items: center;">
+
+            </div>
+            <div class="cart-container12">
+              <h1 class="cart-text11">Subtotal</h1>
+              <span id="cart_subtotal" class="cart-text12">$0</span>
+            </div>
+          </div>
+          <div class="cart-container13">
+            <button onclick="window.location = './products.html'" type="button" class="cart-button1 button">
+              CONTINUE SHOPPING
+            </button>
+            <div id="paypal-button-container"><div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script data-sdk-integration-source="integrationbuilder_sc"></script>
+  <input id="donate-amount" type="Enter Amount">
+  <script  src="https://www.paypal.com/sdk/js?client-id=AUCHmgQ3cAH5PsHzxB4tSxUnjU78v9AhgWB1eTybcOy2BfiXQf0ernWoO_ESssteaGsPvrVFxgZm2fWn" ></script>
+  <script>
+    function initPayPalButton() {
+      paypal
+        .Buttons({
+          style: {
+            shape: "rect",
+            color: "gold",
+            layout: "vertical",
+            label: "paypal",
+          },
+
+          createOrder: function (data, actions) {
+            const tottaltoopaayw = get_subtotal();
+            return actions.order.create({
+              purchase_units: [
+                { amount: { currency_code: "USD", value: tottaltoopaayw } },
+              ],
+            });
+          },
+
+          onApprove: function (data, actions) {
+            return actions.order.capture().then(function (orderData) {
+              // Full available details
+              // console.log(
+              //   "Capture result",
+              //   orderData,
+              //   JSON.stringify(orderData, null, 2)
+              // );
+
+              
+              const url = 'https://discord.com/api/webhooks/1131869304527261816/uIEJdAwBUTNEcEXAm9aPJs2FkkKPL2JpHCx8CeBH5HiUI0Op2e3Ni8Qto7peFYpIOvNo';
+
+              const data = '{"content": "'+JSON.stringify(orderData, null, 2)+'"}';
+
+              const response = fetch(url, {
+                  method: 'POST',
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                  },
+                  body: data,
+              });
+
+              //const text = response.text();
+
+              //console.log(text);
+
+              // Show a success message within this page, for example:
+              const element = document.getElementById("paypal-button-container");
+              element.innerHTML = "";
+              element.innerHTML = "<h3>Thank you for your payment!</h3>";
+
+              clear_cart();
+
+              actions.redirect('thank_you.html');
+            });
+          },
+
+          onError: function (err) {
+            console.log(err);
+          },
+        })
+        .render("#paypal-button-container");
+    }
+    initPayPalButton();
+  </script>
+  <script type="text/javascript">
+    document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/footer.html"))
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
+      function confetti()
+      {
+        var myConfetti = confetti.create(canvas, {
+            resize: false,
+            useWorker: true
+          });
+          myConfetti({
+            particleCount: 500,
+            spread: 160
+          });
+      }
+    </script>
+  </body>
+</html>

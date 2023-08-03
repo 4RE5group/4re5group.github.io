@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Products - 4re5 group</title>
+    <meta
+      name="description"
+      content="Browse all 4RE5 group's products, a cyber-security and developers team"
+    />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:title" content="Products - 4re5 group" />
+    <meta
+      property="og:description"
+      content="Browse all 4RE5 group's products, a cyber-security and developers team"
+    />
+    <meta
+      property="og:image"
+      content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/68d6156f-243e-4b2c-8c19-e7d06f788ff6/ec105207-6331-4b19-9070-2590978e26b7?org_if_sml=1"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+       }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .cart_view {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  transform: translateY(40px);
+  z-index: 1;
+  margin-left: -250px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .cart_view::after {
+  content: "";
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .cart_view {
+  visibility: visible;
+  opacity: 1;
+}
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script>
+    function httpGet(theUrl) {
+      let xmlHttpReq = new XMLHttpRequest();
+      xmlHttpReq.open("GET", theUrl, false);
+      xmlHttpReq.send(null);
+      return xmlHttpReq.responseText;
+    }
+    document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/header.html"))
+    </script>
+
+
+
+      <link href="./home.css" rel="stylesheet" />
+
+      
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <section class="home-hero" style="padding-top: 200px;">
+      <link href="./products.css" rel="stylesheet" />
+
+      <div style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
+        <div style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
+          <div class="products-container" style="padding: 30px; border-radius: 20px; background: white; width: 100%;">
+            <div style="display: flex; flex-direction: row; width: 100%; max-width: 1000px; height: auto;">
+              <h3>Type: </h3>
+              <select onchange="goto_type(event)" id="product_type" name="products-types">
+                <option value="all">All</option>
+              </select>
+            </div>
+            <div id="products_list" style="width: 100%; display: flex;flex-direction: row;flex-wrap: wrap;">
+              <h1 id="noitemh1" style="width: 100%; display: flex; align-self: center; justify-content: center;">No items :/</h1>
+            </div>
+            <div class="products-container4">
+              <button
+                type="button"
+                id="previous_page"
+                class="products-button button"
+              >
+                ←
+              </button>
+              <h1 class="products-text2">Page&nbsp;</h1>
+              <h1 id="page_nbr" class="products-text3">1</h1>
+              <h1 class="products-text4">&nbsp;of&nbsp;</h1>
+              <h1 id="nbr_page_total" class="products-text5">1</h1>
+              <button type="button" id="next_page" class="products-button1 button">
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </section>
+        <script type="text/javascript">
+          document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/footer.html"))
+        </script>
+      </div>
+    </div>
+    <script>
+      function get_import_input(name2, file2)
+      {
+        result = "not found";
+        importfile=file2.split("\r").join("");
+        lines = importfile.split("\n");
+        for (i = 0; i < lines.length; i++) { 
+          if(lines[i] == undefined)
+          {}
+          else
+          {
+            // get value from variable name 
+            if(lines[i].startsWith(name2+": "))
+            {
+              result=lines[i].replace(name2+": ", "");
+            }
+          }
+        }
+        if(result == "not found")
+        {
+          alert("Error at line "+i.toString()+": "+lines[i]);
+        }
+        return result;
+      }
+    </script>
+    <script type="text/javascript">
+      function gotoLink(link)
+      {
+        window.location = link;
+      }
+
+      function load_product(name, description, image, price, id, link)
+      {
+        product_preview = document.getElementById("product_preview");
+        product_preview.style.transform = "scale(1)";
+        document.getElementById("item_name").innerHTML = name;
+        document.getElementById("item_desc").innerHTML = description;
+        //document.getElementById("item_description").innerHTML = description;
+        document.getElementById("item_image").src = image;
+        document.getElementById("item_id").value = id;
+        document.getElementById("item_price").innerHTML = "$"+price;
+        document.getElementById("item_about").style.display = "none"; 
+        if(link!=undefined  && link != null && link != "" && link != " ")
+        {
+          document.getElementById("item_about").style.display = "block";
+          document.getElementById("item_about").onclick = function() { gotoLink(link) }; 
+        }
+
+      }
+    </script>
+    <script type="text/javascript">
+      query = window.location.search;
+      query=query.replace("?type=", "");
+
+
+      fetch('https://api.github.com/repos/4re5team/4re5team.github.io/contents/products')
+       .then(response => response.text())
+       .then(data => {
+        
+        const map = new Map(Object.entries(JSON.parse(data)));
+        map.forEach((_value, key) => {
+          const map2 = new Map(Object.entries(map.get(key)));
+          download_url=map2.get('download_url');
+          totalproducts=0;
+          fetch(download_url)
+           .then(response => response.text())
+           .then(data => {
+            totalproducts++;
+            document.getElementById("noitemh1").innerHTML = "Total products: "+totalproducts;
+            type=get_import_input("type", data);
+            if(true)
+            {
+              product_types=document.getElementById("product_type");
+              if(!product_types.innerHTML.includes(type))
+              {
+                product_types.innerHTML+="<option value='"+type+"'>"+type.replace("_", " ")+"</option>";
+              }
+
+              if(product_types.innerHTML.includes(query))
+              {
+                for (var i = 0; i < product_types.options.length; i++) 
+                 {
+                    if (product_types.options[i].text.replace(" ", "_") == query) {
+                        product_types.selectedIndex = i;
+                         break;
+                     }
+                 }
+              }
+
+
+              if(type == query || query == null || query == "" || query == " " || type=="not found")
+              {
+
+                name=get_import_input("name", data);
+                desc=get_import_input("description", data);
+                price=get_import_input("price", data);
+                id=get_import_input("id", data);
+                link=get_import_input("link", data);
+                imageurl=get_import_input("image", data);
+                newline="`";
+
+                document.getElementById("products_list").innerHTML+=`
+    <div class="products-container2" onclick="load_product('`+name+`', '`+desc+`', '`+imageurl+`', '`+price+`', '`+id+`', '`+link+`')">
+      <div class="products-container3">
+        <img src="`+imageurl+`" alt="`+name+`" class="products-image" />
+                <h1 class="products-text">`+name+`</h1>
+                <span class="products-text1">$`+price+`</span>
+              </div>
+          </div>`;
+              }
+            }
+              })
+            })
+          })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
+      function confetti()
+      {
+        var myConfetti = confetti.create(canvas, {
+            resize: false,
+            useWorker: true
+          });
+          myConfetti({
+            particleCount: 500,
+            spread: 160
+          });
+      }
+    </script>
+
+    <!-- CSS -->
+    <style>
+    #confetti-canvas {
+      position: fixed; 
+      z-index: 999; 
+      top: 0; 
+      left: 0; 
+      width: 100vw; 
+      height: 100vh; 
+      pointer-events: none;
+    }
+    </style>
+
+
+
+    <link href="./product.css" rel="stylesheet">
+    <div id="product_preview" ick="document.getElementById(`product_preview`).style.transform = `scale(0)`" style="background: rgba(0, 0, 0, 0.5); z-index: 50; transform: scale(0); top: 0px; width: 100%; height: 100vh; display: flex; position: fixed; justify-content: center; text-align: center; align-items: center;">
+      <div class="product-container1">
+          <div class="product-container2" style="border-color: black; width: 350px; border-top-width: 2px; border-right-width: 0px; border-bottom-width: 2px; border-left-width: 2px; border-style: solid;">
+            <img id="item_image" alt="image" src="https://play.teleporthq.io/static/svg/default-img.svg" class="product-image" >
+          </div>
+          <div class="product-container3"  class="product-container2" style="borer-color: black; width: 350px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 0px; border-style: solid;">
+            <svg viewBox="0 0 1024 1024" class="product-icon" onclick="document.getElementById(`product_preview`).style.transform = `scale(0)`">
+              <path
+                d="M1014.662 822.66c-0.004-0.004-0.008-0.008-0.012-0.010l-310.644-310.65 310.644-310.65c0.004-0.004 0.008-0.006 0.012-0.010 3.344-3.346 5.762-7.254 7.312-11.416 4.246-11.376 1.824-24.682-7.324-33.83l-146.746-146.746c-9.148-9.146-22.45-11.566-33.828-7.32-4.16 1.55-8.070 3.968-11.418 7.31 0 0.004-0.004 0.006-0.008 0.010l-310.648 310.652-310.648-310.65c-0.004-0.004-0.006-0.006-0.010-0.010-3.346-3.342-7.254-5.76-11.414-7.31-11.38-4.248-24.682-1.826-33.83 7.32l-146.748 146.748c-9.148 9.148-11.568 22.452-7.322 33.828 1.552 4.16 3.97 8.072 7.312 11.416 0.004 0.002 0.006 0.006 0.010 0.010l310.65 310.648-310.65 310.652c-0.002 0.004-0.006 0.006-0.008 0.010-3.342 3.346-5.76 7.254-7.314 11.414-4.248 11.376-1.826 24.682 7.322 33.83l146.748 146.746c9.15 9.148 22.452 11.568 33.83 7.322 4.16-1.552 8.070-3.97 11.416-7.312 0.002-0.004 0.006-0.006 0.010-0.010l310.648-310.65 310.648 310.65c0.004 0.002 0.008 0.006 0.012 0.008 3.348 3.344 7.254 5.762 11.414 7.314 11.378 4.246 24.684 1.826 33.828-7.322l146.746-146.748c9.148-9.148 11.57-22.454 7.324-33.83-1.552-4.16-3.97-8.068-7.314-11.414z"></path>
+            </svg>
+            <h1 id="item_name" class="product-text">item name</h1>
+            <span id="item_price" class="product-text1">$0</span>
+            <span class="product-text2">Quantity</span>
+            <div class="product-container4">
+              <svg viewBox="0 0 804.5714285714286 1024" class="product-icon2" id="minus" onclick="product_number = document.getElementById('item_quantity'); if(Number(product_number.innerHTML) <= 1) { document.getElementById('minus').style.fill = '#D9D9D9'; } else { document.getElementById('plus').style.fill = 'black'; document.getElementById('minus').style.fill = 'black';product_number.innerHTML=Number(product_number.innerHTML)-1; }">
+                <path
+                  d="M804.571 420.571v109.714c0 30.286-24.571 54.857-54.857 54.857h-694.857c-30.286 0-54.857-24.571-54.857-54.857v-109.714c0-30.286 24.571-54.857 54.857-54.857h694.857c30.286 0 54.857 24.571 54.857 54.857z"
+                ></path>
+              </svg>
+              <div class="product-container5">
+                <span id="item_quantity" class="product-text3">1</span>
+              </div>
+              <svg viewBox="0 0 804.5714285714286 1024" class="product-icon4" id="plus" onclick="product_number = document.getElementById('item_quantity'); if(Number(product_number.innerHTML) >= 99) { document.getElementById('plus').style.fill = '#D9D9D9'; } else { document.getElementById('plus').style.fill = 'black'; document.getElementById('minus').style.fill = 'black'; product_number.innerHTML=Number(product_number.innerHTML)+1; }">
+                <path
+                  d="M804.571 420.571v109.714c0 30.286-24.571 54.857-54.857 54.857h-237.714v237.714c0 30.286-24.571 54.857-54.857 54.857h-109.714c-30.286 0-54.857-24.571-54.857-54.857v-237.714h-237.714c-30.286 0-54.857-24.571-54.857-54.857v-109.714c0-30.286 24.571-54.857 54.857-54.857h237.714v-237.714c0-30.286 24.571-54.857 54.857-54.857h109.714c30.286 0 54.857 24.571 54.857 54.857v237.714h237.714c30.286 0 54.857 24.571 54.857 54.857z"
+                ></path>
+              </svg>
+            </div>
+
+            <div style="margin-top: 10px; margin-bottom: 10px; word-wrap: break-word; width: 100%;">
+              <p id="item_desc" style="display: flex; text-align: left;">
+                error
+              </p>
+            </div>
+            
+            <button id="add_to_cart" style="border-color: white;" onclick="add_item(document.getElementById('item_id').value, document.getElementById('item_quantity').innerHTML)" name="add_to_cart" type="button" class="product-button button">
+              Add to cart
+            </button>
+            <button id="item_about" style="color: white; border: white;" name="item_about" type="button" class="product-button1 button">
+              About
+            </button>
+            <span id="item_desc" class="product-text4">description</span>
+            <input id="item_id" type="text" value="0" style="position: absolute; opacity: 0;"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script src="cart/script.js"></script>
+
+
+
+
+  </body>
+</html>

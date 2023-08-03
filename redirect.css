@@ -1,0 +1,14 @@
+.redirect-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--dl-color-gray-white);
+}
+.redirect-text {
+  color: var(--dl-color-template-blue-bg);
+  text-align: center;
+}
