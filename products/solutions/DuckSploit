@@ -1,0 +1,7 @@
+name: DuckSploit
+id: 1
+description: DuckSploit is a remote adminisitration tool (RAT) for any OS.
+image: https://ducksploit.com/public/playground_assets/pc-600h.png
+link: https://ducksploit.com
+featured: true
+type: hacking_software
