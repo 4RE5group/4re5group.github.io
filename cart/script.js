@@ -193,12 +193,12 @@ function goto_type(event)
 function change_quantity(event) {
     idchange=event.target.id.replace("quantity_", "");
     idchange=idchange.replace("quantity2_", "");
-    alert("id: "+idchange);
-    alert("delete_item("+idchange+", "+get_quantity(idchange)+");");
+    //alert("id: "+idchange);
+    //alert("delete_item("+idchange+", "+get_quantity(idchange)+");");
     delete_item(idchange, get_quantity(idchange));
-    alert("add_item("+idchange+", "+event.target.value+");");
+    //alert("add_item("+idchange+", "+event.target.value+");");
     add_item(idchange, event.target.value);
-    alert("id: "+idchange);
+    //alert("id: "+idchange);
     load_cart();
 }
 items_in_cart=0;
@@ -366,7 +366,7 @@ function get_import_input(name2, file2)
     }
     if(result == "not found")
     {
-        alert("Error at line "+i.toString()+": "+lines[i]);
+        console.log("Error at line "+i.toString()+": "+lines[i]);
     }
     return result;
 }
