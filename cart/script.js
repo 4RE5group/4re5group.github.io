@@ -57,7 +57,7 @@ function incNbrRec(i, endNbr, elt, speed) {
 
 
 // promo system
-// fetch('https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/promo/active')
+// fetch('https://raw.githubusercontent.com/4RE5group/4RE5group.github.io/main/promo/active')
 //     .then(response => response.text())
 //     .then(data => {
 //         enabled=get_import_input("enabled", data);
@@ -73,7 +73,7 @@ function incNbrRec(i, endNbr, elt, speed) {
 //     });   
         
 
-fetch('https://api.github.com/repos/4re5team/4re5team.github.io/contents/products')
+fetch('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products')
     .then(response => response.text())
     .then(data => {
         
