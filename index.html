@@ -22,7 +22,7 @@
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {
+      html {  line-height: 1.15;}body { margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {
     display: block;
     width: 100%;
     text-align: center;
@@ -35,6 +35,7 @@
       }
 
       body {
+        background: #EFF0F2;
         font-weight: 400;
         font-style:normal;
         text-decoration: none;
@@ -42,7 +43,7 @@
         letter-spacing: normal;
         line-height: 1.15;
         color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+        /* background-color: var(--dl-color-gray-white); */
 
       }
     </style>
@@ -61,11 +62,11 @@
 
       body::-webkit-scrollbar-thumb {
          background-color:white;
-         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+         box-shadow:0 -100vh 0 100vh #000000;//magic
        }
     </style>
     <link rel="stylesheet" href="./style.css" />
-    <link href="./home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./home.css"  />
   </head>
   <body>
 	  <div>
@@ -127,6 +128,7 @@
               <li><span>Software</span></li>
               <li><span>Hacking</span></li>
               <li><span>Hardware</span></li>
+              <li><span>Inovation</span></li>
             </ul>
 
             <p class="home-text006">
@@ -265,23 +267,23 @@
                 }
                 </style>
 
-                <div class="slideshow-container" style="width: 100%; background: black; height: 400px;">
+                <div class="slideshow-container" style="cursor: pointer; width: 100%; background: black; height: 400px;">
 
                 <div class="mySlides fade">
-                  <div class="numbertext">1 / 3</div>
-                  <img onclick="window.location = './products.html?type=hacking_gadgets'" src="https://camo.githubusercontent.com/735d1c1f11883b2d9198ebc1e1cb7d6db4b73c001601bd967466130479bf866f/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4435593245426d58734141386c6e743f666f726d61743d6a7067266e616d653d343039367834303936" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
+                  <div class="numbertext">1/3</div>
+                  <img onclick="window.location = './products.html?type=hacking_gadgets'" src="assets/Screenshot 2024-08-26 193456.png" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
                   <div class="text" onclick="window.location = './products.html?type=hacking_gadgets'">Hacking gadgets</div>
                   <div class="text2" onclick="window.location = './products.html?type=hacking_gadgets'">Click to browse ►</div>
                 </div>
 
                 <div class="mySlides fade">
-                  <div class="numbertext">2 / 3</div>
+                  <div class="numbertext">2/3</div>
                   <img src="assets/banner.jpg" onclick="window.location = './products.html?type=software'" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
                   <div class="text">Softwares</div>
                 </div>
 
                 <div class="mySlides fade">
-                  <div class="numbertext">3 / 3</div>
+                  <div class="numbertext">3/3</div>
                   <img onclick="window.location = './products.html?type=hacking_software'" src="https://eccommonstorage.blob.core.windows.net/codered/uploads/LP54CZ8FgEWX7FRTVHjFmnnQ7gZKvz38cbJ7NWP4.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
                   <div class="text">Hacking Softwares</div>
                 </div>
@@ -335,7 +337,7 @@
         <section class="home-statistics">
           <div class="home-container2">
             <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>+<span id="users">400</span></span></span>
+              <span class="active-users-text"><span>+<span id="users">500</span></span></span>
               <span class="active-users-text1">
                 <span>— Community users</span>
               </span>
@@ -369,9 +371,13 @@
                   do that for you!
                 </span>
                 <a href="#services" class="home-link7">
-                  <div class="home-get-started02 template-button">
-                    <span class="home-text017">Get started</span>
-                  </div>
+                  <button class="get_started_btn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                
+                    <span class="get_started_btn_text">Get started</span>
+                </button>
                 </a>
               </div>
               <div class="home-image-container">
@@ -401,7 +407,7 @@
               </div>
             </div>
             <div id="windows_prices" class="home-cards1">
-              <div class="home-card">
+              <div class="home-card home-cards-class">
                 <span class="home-text023">WINDOWS</span>
                 <span class="home-text024">
                   <span>Small</span>
@@ -452,7 +458,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card1">
+              <div class="home-card1 home-cards-class">
                 <span class="home-text033">WINDOWS</span>
                 <span class="home-text034">Huge software</span>
                 <span class="home-text035">
@@ -504,7 +510,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card2">
+              <div class="home-card2 home-cards-class">
                 <span class="home-text045">WINDOWS</span>
                 <span class="home-text046">Big app</span>
                 <span class="home-text047">$50</span>
@@ -557,7 +563,7 @@
               </div>
             </div>
             <div id="android_prices" class="home-cards2">
-              <div class="home-card3">
+              <div class="home-card3 home-cards-class">
                 <span class="home-text055">ANDROID</span>
                 <span class="home-text056">
                   <span>Small</span>
@@ -608,7 +614,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card4">
+              <div class="home-card4 home-cards-class">
                 <span class="home-text065">ANDROID</span>
                 <span class="home-text066">Huge software</span>
                 <span class="home-text067">
@@ -660,7 +666,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card5">
+              <div class="home-card5 home-cards-class">
                 <span class="home-text077">ANDROID</span>
                 <span class="home-text078">Big app</span>
                 <span class="home-text079">$45</span>
@@ -713,7 +719,7 @@
               </div>
             </div>
             <div id="other_prices" class="home-cards3">
-              <div class="home-card6">
+              <div class="home-card6 home-cards-class">
                 <span class="home-text087">OTHER</span>
                 <span class="home-text088">Cyber-sec course</span>
                 <span class="home-text089">$25</span>
@@ -748,7 +754,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card7">
+              <div class="home-card7 home-cards-class">
                 <span class="home-text094">OTHER</span>
                 <span class="home-text095" style="text-align: center;">Info gathering</span>
                 <span class="home-text096">
@@ -800,7 +806,7 @@
                   </div>
                 </div>
               </div>
-              <div class="home-card8">
+              <div class="home-card8 home-cards-class">
                 <span class="home-text106">OTHER</span>
                 <span class="home-text107">Big app</span>
                 <span class="home-text108">$45</span>
@@ -952,6 +958,41 @@
             }
           }
         </script>
+        <section class="home-social">
+          <div class="home-heading1">
+            <span class="home-text116 title">Follow us on</span>
+            
+            <div style="align-items: center; width: 100%; max-width: 80%; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+              <!-- discord -->
+              <a href="https://discord.com/invite/TQTEvt2wsb" style="margin-bottom: 20px; margin-right: 20px;"><button class="social_button">
+                <svg style="z-index: 1;" viewBox="0 0 16 16" class="bi bi-discord" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"></path></svg>
+                   <span>Discord</span>
+               </button></a>
+              <!-- insta -->
+              <a href="https://www.instagram.com/4re5_group/" style="margin-bottom: 20px; margin-right: 20px;"><button style="--primary-color: rgb(255,0,0);" class="social_button">
+                <svg style="z-index: 1;" viewBox="0 0 16 16" class="bi bi-instagram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+                   <span>Instagram</span>
+               </button></a>
+              <!-- HTB -->
+              <a href="https://ctf.hackthebox.com/team/overview/50297" style="margin-bottom: 20px; margin-right: 20px;"><button style="--primary-color: #9fef00;" class="social_button">
+                <svg style="z-index: 1;" viewBox="0 0 24 24" class="bi bi-hackthebox" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.996 0a1.119 1.119 0 0 0-.057.003.9.9 0 0 0-.236.05.907.907 0 0 0-.165.079L1.936 5.675a.889.889 0 0 0-.445.77v11.111a.889.889 0 0 0 .47.784l9.598 5.541.054.029v.002a.857.857 0 0 0 .083.035l.012.004c.028.01.056.018.085.024.01.001.011.003.016.004a.93.93 0 0 0 .296.015.683.683 0 0 0 .086-.015c.01 0 .011-.002.016-.004a.94.94 0 0 0 .085-.024l.012-.004a.882.882 0 0 0 .083-.035v-.002a1.086 1.086 0 0 0 .054-.029l9.599-5.541a.889.889 0 0 0 .469-.784V6.48l-.001-.026v-.008a.889.889 0 0 0-.312-.676l-.029-.024c0-.002-.01-.005-.01-.007a.899.899 0 0 0-.107-.07L12.453.127A.887.887 0 0 0 11.99 0zm.01 2.253c.072 0 .144.019.209.056l6.537 3.774a.418.418 0 0 1 0 .724l-6.537 3.774a.418.418 0 0 1-.418 0L5.26 6.807a.418.418 0 0 1 0-.724l6.537-3.774a.42.42 0 0 1 .209-.056zm-8.08 6.458a.414.414 0 0 1 .215.057l6.524 3.766a.417.417 0 0 1 .208.361v7.533a.417.417 0 0 1-.626.361l-6.523-3.766a.417.417 0 0 1-.209-.362V9.13c0-.241.196-.414.41-.418zm16.16 0c.215.004.41.177.41.418v7.532a.42.42 0 0 1-.208.362l-6.524 3.766a.417.417 0 0 1-.626-.361v-7.533c0-.149.08-.286.209-.36l6.523-3.767a.415.415 0 0 1 .216-.057z"></path></g></svg>
+                   <span>HackTheBox</span>
+               </button></a>
+              <!-- github -->
+              <a href="https://github.com/4re5group" style="margin-bottom: 20px; margin-right: 20px;"><button style="--primary-color: #000000;" class="social_button">
+                <svg style="z-index: 1;" viewBox="0 0 16 16" class="bi bi-instagram" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                
+                <!-- <svg  class="bi bi-github" width="16" fill="currentColor" height="16" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.44000000000000006"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg> -->
+                  <span>Github</span>
+               </button></a>
+  
+            </div>
+            
+          </div>
+        </section>
+
+        <div id="separator1" style="align-self: center; background: var(--dl-color-template-blue-bg); width: 80%; height: 3px;"></div>
+
         <section class="home-faq">
           <div class="home-heading1">
             <span class="home-text116 title">Frequently asked questions</span>
@@ -1046,6 +1087,8 @@
           <div>
           </div>
         </section>
+        <script type="text/javascript" src="http://api.4re5.com/sdk.js"></script>
+        <script>load_login(); openPopup();</script>
         <script type="text/javascript">
           document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/footer.html"))
         </script>

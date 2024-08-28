@@ -1,5 +1,12 @@
 // cart setup
 
+function loading_svg() {
+    document.getElementById("products_list").innerHTML = `
+<svg style="width: 50px; height: 50px; transform-origin: center; animation: rotate4 2s linear infinite;" viewBox="25 25 50 50">
+    <circle style="fill: none; stroke: hsl(214, 97%, 59%); stroke-width: 2; stroke-dasharray: 1, 200; stroke-dashoffset: 0; stroke-linecap: round; animation: dash4 1.5s ease-in-out infinite;" r="20" cy="50" cx="50"></circle>
+</svg>`;
+}
+
 
 cart = document.getElementById("cart_view");
 
@@ -150,9 +157,14 @@ function load_cart()
 
 // items saved like that: item_id:quantity/item_id:quantity
 
+function truncate(number) {
+    var with2Decimals = number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
+    return with2Decimals;
+}
+
 function get_subtotal()
 {
-    return parseFloat(subtotal);
+    return truncate(parseFloat(subtotal), 3);
 }
 
 function get_quantity(id)
@@ -211,7 +223,7 @@ function process_item(item)
     id=item_element[0];
     quantity=item_element[1];
 
-    subtotal=Number(subtotal)+Number(quantity)*Number(get_product_by_id(id, "price"));
+    subtotal=truncate(Number(subtotal)+Number(quantity)*Number(get_product_by_id(id, "price")));
     document.getElementById("subtotal").innerHTML="$"+subtotal;
 
     if(document.getElementById("cart_subtotal") != null && document.getElementById("cart_subtotal") != undefined)
@@ -328,7 +340,10 @@ function delete_item(id, quantity)
     load_cart();
     document.getElementById("subtotal").innerHTML="$"+subtotal;
     document.getElementById("items_in_cart").innerHTML=items_in_cart;
-    document.getElementById("cart_subtotal").innerHTML="$"+subtotal;
+    if(document.getElementById("cart_subtotal") != null) {
+        document.getElementById("cart_subtotal").innerHTML="$"+subtotal;
+    }
+    
 }
 
 function add_item(id, quantity)
