@@ -1,3 +1,79 @@
+.project_card {
+  box-shadow: grey 2px 2px 6px;
+  border-radius: 5px;
+  padding: 20px;
+  flex-direction: column;
+  gap: 15px;
+  display: flex;
+  height: 475px;
+  width: 300px;
+  margin: 10px;
+}
+.project_card:hover {
+  transform: scale(1.02);
+  animation: ease-in-out 1s;
+}
+
+@mixin white-gradient {
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-300px * 7))}
+}
+.slider {
+	/* background: white; */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+	/* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125); */
+	height: 500px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 100%;
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+  .slider:hover {
+    /* animation-duration: 40s; */
+    animation-play-state: paused;
+  }
+
+	.slide-track {
+		animation: scroll 20s linear infinite;
+		display: flex;
+		width: 100%;
+	}
+	
+	.slide {
+		height: 100px;
+		width: 350px;
+	}
+}
+
+
+
 .social_button {
   --primary-color: rgba(88, 101, 242, 1);
 
