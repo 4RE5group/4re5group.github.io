@@ -10,6 +10,10 @@ button {
   transition: all 450ms ease-in-out;
 }
 
+.button-hover:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
 
 .get_started_btn {
   flex-direction: row;
