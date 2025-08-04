@@ -278,9 +278,7 @@
 }
 .home-logo1 {
   width: 105px;
-  filter: invert(100%);
   margin-left: var(--dl-space-space-halfunit);
-  -webkit-filter: invert(100%);
 }
 .home-links1 {
   font-size: large;
