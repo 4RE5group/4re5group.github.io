@@ -44,7 +44,6 @@
         line-height: 1.15;
         color: var(--dl-color-gray-black);
         /* background-color: var(--dl-color-gray-white); */
-
       }
     </style>
     <link
@@ -62,7 +61,7 @@
 
       body::-webkit-scrollbar-thumb {
          background-color:white;
-         box-shadow:0 -100vh 0 100vh #000000;//magic
+         box-shadow:0 -100vh 0 100vh #000000;
        }
     </style>
     <link rel="stylesheet" href="./style.css" />
@@ -120,8 +119,8 @@
 
 
           </div>
-        </div>
-        <section style="height: 1050px;" class="home-hero">
+        </div>			
+        <section style="height: 100vh; background-image: url(assets/background.gif); background-size: cover;" class="home-hero">
           <header class="home-header">
             <h1 class="home-text005">The Future of </h1>
             <ul class="dynamic-txts">
@@ -131,9 +130,7 @@
               <li><span>Inovation</span></li>
             </ul>
 
-            <p class="home-text006">
-              We make usefull softwares and devices with new technology
-            </p>
+            
             <a href="#products" class="home-link4">
               <div class="home-get-started01">
                 <span class="home-text007">Browse our products</span>
@@ -150,7 +147,22 @@
               />
             </div>
           </div>
+        </section> 
+
+        <section class="home-features" style="background-color: #000000; color: white">
+          <div class="home-title">
+            <span id="products" class="home-text008">About The Company</span>
+          </div>
+          <div class="home-cards">
+            <div class="home-container1" style="flex-direction: column;">
+              <p class="home-text006">
+                We are driven by a passion for technology and a commitment to ethical development. Our team is constantly exploring new ways to innovate while maintaining the highest standards of integrity and user trust. We believe in transparency, open communication, and building products that truly make a difference.
+              </p>
+            </div>
+          </div>
         </section>
+
+
         <section class="home-features">
           <div class="home-title">
             <span id="products" class="home-text008">Our Products</span>
@@ -386,15 +398,6 @@
                         </a>
                   </div>
               </div>`;
-
-
-                    // console.log(_value);
-                    // _value['description']
-                    // 
-                    // _value['license']['name']
-                    // _value['html_url']
-                    // _value['language']
-
                   }
                   
                 })});
@@ -432,21 +435,21 @@
             <div class="active-users-active-users metrics">
               <span class="active-users-text"><span>+<span id="users">500</span></span></span>
               <span class="active-users-text1">
-                <span>— Community users</span>
+                <span>Community users</span>
               </span>
             </div>
             <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span id="customers">20</span></span>
-              <span class="active-users-text1"><span>— Custommers</span></span>
+              <span class="active-users-text"><span>+<span id="customers">30</span></span></span>
+              <span class="active-users-text1"><span>Custommers</span></span>
             </div>
             <div class="active-users-active-users metrics">
-              <span class="active-users-text"><span>+<span id="projects">15</span></span></span>
-              <span class="active-users-text1"><span>— Projects</span></span>
+              <span class="active-users-text"><span>+<span id="projects">40</span></span></span>
+              <span class="active-users-text1"><span>Projects</span></span>
             </div>
             <div class="active-users-active-users metrics">
               <span class="active-users-text"><span>+<span id="ideas">35</span></span></span>
               <span class="active-users-text1">
-                <span>— Projects ideas</span>
+                <span>Projects ideas</span>
               </span>
             </div>
           </div>
@@ -514,17 +517,6 @@
                 </a>
                 <span class="home-text029">Specifications</span>
                 <div class="home-bullet-points">
-                  <div class="home-point">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon06"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text030">Payment via Paypal</span>
-                  </div>
                   <div class="home-point01">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -568,17 +560,6 @@
                 </a>
                 <span class="home-text041">Specifications</span>
                 <div class="home-bullet-points1">
-                  <div class="home-point03">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon12"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text042">Payment via Paypal</span>
-                  </div>
                   <div class="home-point04">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -617,17 +598,6 @@
                 </a>
                 <span class="home-text051">Specifications</span>
                 <div class="home-bullet-points2">
-                  <div class="home-point06">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon18"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text052">Payment via Paypal</span>
-                  </div>
                   <div class="home-point07">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -670,17 +640,6 @@
                 </a>
                 <span class="home-text061">Specifications</span>
                 <div class="home-bullet-points3">
-                  <div class="home-point09">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon24"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text062">Payment via Paypal</span>
-                  </div>
                   <div class="home-point10">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -724,17 +683,6 @@
                 </a>
                 <span class="home-text073">Specifications</span>
                 <div class="home-bullet-points4">
-                  <div class="home-point12">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon30"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text074">Payment via Paypal</span>
-                  </div>
                   <div class="home-point13">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -773,17 +721,6 @@
                 </a>
                 <span class="home-text083">Specifications</span>
                 <div class="home-bullet-points5">
-                  <div class="home-point15">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon36"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text084">Payment via Paypal</span>
-                  </div>
                   <div class="home-point16">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -823,17 +760,6 @@
                 </a>
                 <span class="home-text091">Specifications</span>
                 <div class="home-bullet-points6">
-                  <div class="home-point18">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon42"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text092">Payment via Paypal</span>
-                  </div>
                   <div class="home-point19">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -864,17 +790,6 @@
                 </a>
                 <span class="home-text102">Specifications</span>
                 <div class="home-bullet-points7">
-                  <div class="home-point20">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon46"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text103">Payment via Paypal</span>
-                  </div>
                   <div class="home-point21">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"
@@ -913,17 +828,6 @@
                 </a>
                 <span class="home-text112">Specifications</span>
                 <div class="home-bullet-points8">
-                  <div class="home-point23">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon52"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text113">Payment via Paypal</span>
-                  </div>
                   <div class="home-point24">
                     <svg
                       viewBox="0 0 877.7142857142857 1024"

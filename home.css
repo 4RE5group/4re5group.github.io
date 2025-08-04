@@ -9,6 +9,12 @@
   width: 300px;
   margin: 10px;
 }
+
+.blur {
+    background-color: hsla(0, 0%, 60%, .2);
+    backdrop-filter: blur(10px);
+}
+
 .project_card:hover {
   transform: scale(1.02);
   animation: ease-in-out 1s;
@@ -277,6 +283,7 @@
   -webkit-filter: invert(100%);
 }
 .home-links1 {
+  font-size: large;
   width: 100%;
   display: flex;
   align-items: center;
@@ -342,11 +349,11 @@
     /*  padding-left: var(--dl-space-space-sevenunits);*/
 /*  padding-right: var(--dl-space-space-sevenunits);*/
     flex-direction: column;
-    background-color: var(--dl-color-template-blue-bg);
+    /* background-color: var(--dl-color-template-blue-bg); */
 }
 .home-header {
   display: flex;
-  margin-top: 240px;
+  margin-top: 300px;
   align-items: center;
   flex-direction: column;
 }
@@ -357,11 +364,13 @@
   text-align: center;
   font-weight: 700;
   line-height: 80px;
+  font-family: Inter-black, sans-serif;
+  font-weight: bolder;
 }
 .home-text006 {
   color: rgb(238, 233, 254);
   font-size: 20px;
-  max-width: 600px;
+  max-width: 1000px;
   margin-top: 16px;
   text-align: center;
   line-height: 30px;
@@ -395,9 +404,9 @@
   font-weight: 600;
 }
 .home-dashboard-preview {
-  top: 650px;
+  bottom: -100px;
   display: flex;
-  position: absolute;
+  position: relative;
   align-items: center;
   border-color: var(--dl-color-primary-300);
   border-width: 30px;
@@ -416,10 +425,8 @@
 }
 .home-image {
   width: 900px;
-  x-index: 0;
-  z-index: 10;
   user-select: none;
-  border-radius: 70px;
+  border-radius: 30px;
 }
 .home-features {
   width: 100%;
@@ -2269,7 +2276,6 @@
   }
   .home-header {
     height: 100%;
-    margin-top: var(--dl-space-space-fourunits);
     justify-content: center;
   }
   .home-text005 {
@@ -2289,9 +2295,8 @@
     margin-top: var(--dl-space-space-twounits);
   }
   .home-dashboard-preview {
-    top: 520px;
+    bottom: -300px;
     width: 90%;
-    z-index: 3;
     border-width: 10px;
     border-radius: 45px;
   }
@@ -2469,9 +2474,6 @@
   }
   .home-text006 {
     color: #EEE9FE;
-  }
-  .home-get-started01 {
-    width: 100%;
   }
   .home-dashboard-preview {
     top: 500px;

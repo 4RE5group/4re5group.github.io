@@ -102,10 +102,14 @@ button {
   background: var(--dl-color-template-blue-bg);
   border-left: 2px solid white;
   animation: typing 3s steps(10) infinite;
+  background-image: url(assets/background.gif);
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
 }
 @keyframes typing {
   40%, 60%{
-    left: calc(100% + 30px);
+    left: calc(100% + 60px);
   }
   100%{
     left: 0;
