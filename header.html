@@ -81,4 +81,20 @@
 </nav>
 <script>
   load_cart();
+  document.body.addEventListener("scroll", () => {
+    try
+    {
+      var elem = document.querySelector("home-features");
+      var links = document.querySelector("home-links1");
+      if (elem.getClientRects()[0].top >= 0 && elem.getClientRects()[0].bottom >= 0)
+      {
+        links.style.color = "black";
+      } else {
+        links.style.color = "white";
+      }
+    }
+    catch (e)
+    {
+    }
+  });
 </script>
