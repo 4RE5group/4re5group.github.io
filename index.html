@@ -68,16 +68,18 @@
     <link rel="stylesheet" href="./home.css"  />
   </head>
   <body>
-	  <div>
-	  	<script>
-		function httpGet(theUrl) {
-		  let xmlHttpReq = new XMLHttpRequest();
-		  xmlHttpReq.open("GET", theUrl, false);
-		  xmlHttpReq.send(null);
-		  return xmlHttpReq.responseText;
-		}
-		document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/header.html"))
-		</script>
+	  <div id="header-elem">
+      <script type="text/javascript" src="https://api.4re5.com/sdk.js"></script>
+      <script type="text/javascript" src="4re5.js"></script>
+      <script>
+          get_header_footer(true, function(content) {
+              if (content) {
+                  document.getElementById("header-elem").innerHTML = content;
+              } else {
+                  console.warn("Failed to load header.");
+              }
+          });
+      </script>
 	  </div>
     
 
@@ -140,7 +142,7 @@
           
         </section> 
 
-        <section class="home-features">
+        <section class="home-features" id="products-div">
           <div class="home-title">
             <span id="products" class="home-text008">Our Products</span>
           </div>
@@ -258,24 +260,27 @@
 
                 <div class="slideshow-container" style="cursor: pointer; width: 100%; background: black; height: 400px;">
 
-                <div class="mySlides fade">
+                <a href="./products.html?type=hacking_phone"><div class="mySlides fade">
                   <div class="numbertext">1/3</div>
-                  <img onclick="window.location = './products.html?type=hacking_gadgets'" src="assets/Screenshot 2024-08-26 193456.png" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
-                  <div class="text" onclick="window.location = './products.html?type=hacking_gadgets'">Hacking gadgets</div>
-                  <div class="text2" onclick="window.location = './products.html?type=hacking_gadgets'">Click to browse ►</div>
-                </div>
+                  <img src="assets/Screenshot 2024-08-26 193456.png" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
+                  <div class="text">Hacking Devices</div>
+                  <div class="text2">Click to browse ►</div>
+                </div></a>
 
-                <div class="mySlides fade">
+                <a href="./products.html?type=software"><div class="mySlides fade">
                   <div class="numbertext">2/3</div>
-                  <img src="assets/banner.jpg" onclick="window.location = './products.html?type=software'" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
+                  <img src="assets/banner.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
                   <div class="text">Softwares</div>
-                </div>
+                  <div class="text2">Click to browse ►</div>
+                </div></a>
+                
 
-                <div class="mySlides fade">
+                <a href="./products.html?type=hacking_software"><div class="mySlides fade">
                   <div class="numbertext">3/3</div>
-                  <img onclick="window.location = './products.html?type=hacking_software'" src="https://eccommonstorage.blob.core.windows.net/codered/uploads/LP54CZ8FgEWX7FRTVHjFmnnQ7gZKvz38cbJ7NWP4.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
+                  <img src="https://eccommonstorage.blob.core.windows.net/codered/uploads/LP54CZ8FgEWX7FRTVHjFmnnQ7gZKvz38cbJ7NWP4.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
                   <div class="text">Hacking Softwares</div>
-                </div>
+                  <div class="text2">Click to browse ►</div>
+                </div></a>
 
                 <a class="prev" onclick="plusSlides(-1)">❮</a>
                 <a class="next" onclick="plusSlides(1)">❯</a>
@@ -323,7 +328,7 @@
             <h1 class="home-text013">See more →</h1>
           </a>
         </section>
-        <section style="padding-top: 0px; width: 100%; margin: 0px; padding: 0px; padding-bottom: 20px;" class="home-features">
+        <section style="padding-top: 0px; width: 100%; margin: 0px; padding: 0px; padding-bottom: 20px;" id="projects-div" class="home-features">
           <h1 class="home-text008">Our projects</h1>
           <div class="slider">
             <div class="slide-track" id="slideCaroussel">
@@ -432,7 +437,7 @@
           </div>
         </section>
         <section class="home-banners">
-          <div class="home-banner-manage">
+          <div id="need-a-software-div" class="home-banner-manage">
             <div class="home-container3">
               <div class="home-left1">
                 <span id="services" class="home-text014 sub-title">
@@ -969,7 +974,24 @@
               <span class="home-text006">
                 Join us on this journey as <strong>we continue to push the boundaries of what's possible in the digital world</strong>. At 4re5, we're not <strong>just building software</strong>; <strong>we're building a safer, more enjoyable future for everyone.</strong>
               </span>
+              <span class="home-text006">Provide support ♥</span>
             </div>
+            <div id="donate-button-container">
+              <div id="donate-button"></div>
+              <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+              <script>
+                PayPal.Donation.Button({
+                  env:'production',
+                  hosted_button_id:'9DZHS4PBQ8WFG',
+                  image: {
+                    src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                    alt:'Donate with PayPal button',
+                    title:'PayPal - The safer, easier way to pay online!',
+                  }
+                }).render('#donate-button');
+              </script>
+            </div>
+
           </div>
         </section>
         <section class="home-social">
@@ -1106,10 +1128,26 @@
           <div>
           </div>
         </section>
-        <script type="text/javascript" src="https://api.4re5.com/sdk.js"></script>
-        <script>load_login(); openPopup();</script>
+        <script>
+          // load 4re5 sdk
+          try {
+            load_login(); 
+            openPopup();
+          }
+          catch (e)
+          {
+            console.warn("4re5 sdk could not be loaded");
+          }
+        </script>
+        <div id="footer-elem" style="width: 100%;"></div>
         <script type="text/javascript">
-          document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/footer.html"))
+          get_header_footer(false, function(content) {
+              if (content) {
+                  document.getElementById("footer-elem").innerHTML = content;
+              } else {
+                  console.warn("Failed to load footer.");
+              }
+          });
         </script>
         <script type="text/javascript">
           incEltNbr("customers");

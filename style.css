@@ -19,6 +19,22 @@ body {
   scroll-behavior: smooth;
 }
 
+.ares-manager-section { 
+  z-index: 9;
+  top: 0px;
+  left: 0px;
+  position: absolute;  
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.4);
+  filter: blur(1);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .get_started_btn {
   flex-direction: row;
   border: none;

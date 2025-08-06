@@ -81,20 +81,52 @@
 </nav>
 <script>
   load_cart();
-  document.body.addEventListener("scroll", () => {
-    try
-    {
-      var elem = document.querySelector("home-features");
-      var links = document.querySelector("home-links1");
-      if (elem.getClientRects()[0].top >= 0 && elem.getClientRects()[0].bottom >= 0)
-      {
-        links.style.color = "black";
-      } else {
-        links.style.color = "white";
-      }
+document.getElementsByTagName('body')[0].onscroll = function() {
+    try {
+        var links = document.querySelectorAll(".home-links1 a"); // Select all links
+        var logo = document.querySelector(".home-logo1");
+
+        var elemsArray = [
+            document.getElementById("products-div"),
+            document.getElementById("projects-div"),
+            document.getElementById("need-a-software-div"),
+            document.querySelector(".home-social"), // Added dot for class selection
+            document.querySelector(".home-faq") // Added dot for class selection
+        ];
+
+        // Reset styles before applying new ones
+        links.forEach(function(link) {
+            link.style.color = "white";
+        });
+        if (logo) {
+            logo.style.filter = "invert(0)";
+        }
+
+        // Check for overlaps and apply styles
+        elemsArray.forEach(function(elem) {
+            if (elem) {
+                var elemRect = elem.getBoundingClientRect();
+
+                links.forEach(function(link) {
+                    var linkRect = link.getBoundingClientRect();
+
+                    // Check if the link is overlapping with the current element
+                    var isOverlapping = !(linkRect.right < elemRect.left ||
+                                          linkRect.left > elemRect.right ||
+                                          linkRect.bottom < elemRect.top ||
+                                          linkRect.top > elemRect.bottom);
+
+                    if (isOverlapping) {
+                        link.style.color = "black"; // Change color of the specific link
+                        if (logo) {
+                            logo.style.filter = "invert(1)";
+                        }
+                    }
+                });
+            }
+        });
+    } catch (e) {
+        console.error(e);
     }
-    catch (e)
-    {
-    }
-  });
+};
 </script>

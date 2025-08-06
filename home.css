@@ -347,7 +347,7 @@
     /*  padding-left: var(--dl-space-space-sevenunits);*/
 /*  padding-right: var(--dl-space-space-sevenunits);*/
     flex-direction: column;
-    /* background-color: var(--dl-color-template-blue-bg); */
+    background-color: var(--dl-color-template-blue-bg);
 }
 .home-header {
   display: flex;
@@ -2094,10 +2094,6 @@
   .home-links1 {
     display: block;
   }
-  .home-hero {
-    /*padding-left: var(--dl-space-space-oneandhalfunits);
-    padding-right: var(--dl-space-space-oneandhalfunits);*/
-  }
   .home-header {
     width: 100%;
     max-width: 1200px;
@@ -2532,5 +2528,11 @@
   }
 }
 
-@media screen{
+@media(max-width:333px){
+  .home-links1 {
+    margin-left: 0px;
+  }
+  .home-left {
+    margin: 0px;
+  }
 }

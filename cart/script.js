@@ -1,4 +1,4 @@
-// cart setup
+// cart setup, 4re5 group, all rights reserved
 
 function loading_svg() {
     document.getElementById("products_list").innerHTML = `
@@ -80,40 +80,14 @@ function incNbrRec(i, endNbr, elt, speed) {
 //     });   
         
 
-fetch('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products')
-    .then(response => response.text())
-    .then(data => {
-        
-        const map = new Map(Object.entries(JSON.parse(data)));
-        map.forEach((_value, key) => {
-            const map2 = new Map(Object.entries(map.get(key)));
-            download_url=map2.get('download_url');
-            fetch(download_url)
-              .then(response => response.text())
-              .then(data => {
-                cart_list = document.getElementById("cart_list");
-                id=get_import_input("id", data);
-                products.set(id, data);
-
-                var obj = Object.fromEntries(products);
-                var jsonString = JSON.stringify(obj);
-                sessionStorage.setItem("products", jsonString);
-        })
-    })
-})
-
 function get_product_by_id(id, key)
 {
     temp_id=products.get(id);
 
     if(temp_id != undefined)
-    {
         return get_import_input(key, temp_id);
-    }
     else
-    {
         return "not found";
-    }
 }
 
 function load_cart()
@@ -142,8 +116,6 @@ function load_cart()
         
         var items = cart_content.split("/");
         items.forEach(process_item);
-
-
     }
     else
     {
@@ -158,8 +130,10 @@ function load_cart()
 // items saved like that: item_id:quantity/item_id:quantity
 
 function truncate(number) {
-    var with2Decimals = number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
-    return with2Decimals;
+    var with2Decimals = number.toString().match(/^-?\d+(?:\.\d{0,2})?/);
+    if (with2Decimals)
+        return with2Decimals[0];
+    return (0);
 }
 
 function get_subtotal()
@@ -234,6 +208,8 @@ function process_item(item)
 
     onclickvar="delete_item("+id+", Number(document.getElementById(`quantity_"+id+"`).value));";
 
+    console.log("id: "+ id);
+
     cart.innerHTML+=`
 <div class="" style="margin-bottom: 10px; width: 100%;height: 150px;display: flex;background: #1c1c1c;justify-content: center;text-align: center;align-content: center;border-radius: 20px;align-content: center;">
     <img src="`+get_product_by_id(id, "image")+`" style="width: 100px;height: 100px;margin-top: 25px;flex-direction: row;display: flex;">
@@ -257,19 +233,19 @@ function process_item(item)
                 <img src="`+get_product_by_id(id, "image")+`" alt="image" class="cart-image">
                 <div class="cart-container08">
                   <h1 class="cart-text08">`+get_product_by_id(id, "name")+`</h1>
-                  <button id="close2_`+id+`" onclick="delete_item('`+id+`', '`+quantity+`')" type="button" class="cart-button button">
-                    REMOVE
-                  </button>
                 </div>
               </div>
-              <div class="cart-container09">
-                <span class="cart-text09">$`+get_product_by_id(id, "price")+`</span>
-              </div>
-              <div class="cart-container10">
-                <input id="quantity2_`+id+`" onchange="document.getElementById('close2_`+id+`').onclick = '`+onclickvar2+`'; change_quantity(event);" type="number" placeholder="0" required="" min="1" max="99" step="1" value="`+quantity+`" class="cart-textinput input">
-              </div>
-              <div class="cart-container11">
-                <span id="pric" class="cart-text10">$`+Number(get_product_by_id(id, "price")) * Number(quantity)+`</span>
+              <div style="width: 100%; display: flex; font-size: 10px;">
+                <div class="cart-container09">
+                    <span class="cart-text09">$`+Number(get_product_by_id(id, "price"))+`</span>
+                </div>
+                <div class="cart-container10">
+                    <input id="quantity2_`+id+`" onchange="document.getElementById('close2_`+id+`').onclick = '`+onclickvar2+`'; change_quantity(event);" type="number" placeholder="0" required="" min="1" max="99" step="1" value="`+quantity+`" class="cart-textinput input">
+                    <svg width="30px" height="30px" id="close2_`+id+`" onclick="delete_item('`+id+`', '`+quantity+`')" viewBox="-0.5 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#9e1529"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><g id="out" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <path d="M4.91666667,14.8888889 C4.91666667,15.3571429 5.60416667,16 6.0625,16 L12.9375,16 C13.3958333,16 14.0833333,15.3571429 14.0833333,14.8888889 L14.0833333,6 L4.91666667,6 L4.91666667,14.8888889 L4.91666667,14.8888889 L4.91666667,14.8888889 Z M15,3.46500003 L12.5555556,3.46500003 L11.3333333,2 L7.66666667,2 L6.44444444,3.46500003 L4,3.46500003 L4,4.93000007 L15,4.93000007 L15,3.46500003 L15,3.46500003 L15,3.46500003 Z" id="path" fill="#9e1529" sketch:type="MSShapeGroup"> </path> </g> </g></svg>
+                </div>
+                <div class="cart-container11">
+                    <span id="pric" class="cart-text10">$`+Number(get_product_by_id(id, "price")) * Number(quantity)+`</span>
+                </div>
               </div>
             </div>`;
     }

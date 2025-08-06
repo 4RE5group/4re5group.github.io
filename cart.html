@@ -54,7 +54,7 @@
 
       body::-webkit-scrollbar-thumb {
          background-color:white;
-         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+         box-shadow:0 -100vh 0 100vh #5128f5;
        }
     </style>
     <link rel="stylesheet" href="./style.css" />
@@ -67,16 +67,21 @@
 
       <div class="cart-container">
         
-
-        <script>
-        function httpGet(theUrl) {
-          let xmlHttpReq = new XMLHttpRequest();
-          xmlHttpReq.open("GET", theUrl, false);
-          xmlHttpReq.send(null);
-          return xmlHttpReq.responseText;
-        }
-        document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/header.html"))
-        </script>
+        <div id="header-elem" style="width: 100%;">
+          <script type="text/javascript" src="https://api.4re5.com/sdk.js"></script>
+          <script src="4re5.js"></script>
+          <script>
+              get_header_footer(true, function(content) {
+                  if (content) {
+                      document.getElementById("header-elem").innerHTML = content;
+                      document.querySelector(".home-links1").style.color = "black";
+                      document.querySelector(".home-logo1").style.filter = "invert(1)";
+                  } else {
+                      console.warn("Failed to load header.");
+                  }
+              });
+          </script>
+        </div>
 
 
 
@@ -110,7 +115,7 @@
           </div>
           <div class="cart-container13">
             <button onclick="window.location = './products.html'" type="button" class="cart-button1 button">
-              CONTINUE SHOPPING
+              Continue Shopping
             </button>
             <div id="paypal-button-container"><div>
           </div>
@@ -119,11 +124,10 @@
     </div>
     <script data-sdk-integration-source="integrationbuilder_sc"></script>
   <input id="donate-amount" type="Enter Amount">
-  <script  src="https://www.paypal.com/sdk/js?client-id=ARUfBS-RJL7FjqmW7n49W7k4DWhOBF4TJ4UQXdDw4mYRBU9tgNrGViBeKpoGa3zs2Ml7ekylvfj6DID4" ></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AYgY_MqktG0FUNAmziymsn7FD2jAHKqQVqfD6S6SCn9ggZvwn351DTPLZZgZ1Z7hT7mMxNjE-3jpZMFe" ></script>
   <script>
     function initPayPalButton() {
-      paypal
-        .Buttons({
+      paypal.Buttons({
           style: {
             shape: "rect",
             color: "gold",
@@ -132,7 +136,10 @@
           },
 
           createOrder: function (data, actions) {
-            const tottaltoopaayw = get_subtotal();
+            // const tottaltoopaayw = get_subtotal();
+            tottaltoopaayw = 0.1;
+            if (tottaltoopaayw <= 0)
+              return (0);
             return actions.order.create({
               purchase_units: [
                 { amount: { currency_code: "USD", value: tottaltoopaayw } },
@@ -143,34 +150,15 @@
           onApprove: function (data, actions) {
             return actions.order.capture().then(function (orderData) {
               // Full available details
-              // console.log(
-              //   "Capture result",
-              //   orderData,
-              //   JSON.stringify(orderData, null, 2)
-              // );
-
-              
-              const url = 'https://discord.com/api/webhooks/1131869304527261816/uIEJdAwBUTNEcEXAm9aPJs2FkkKPL2JpHCx8CeBH5HiUI0Op2e3Ni8Qto7peFYpIOvNo';
-
-              const data = '{"content": "'+JSON.stringify(orderData, null, 2)+'"}';
-
-              const response = fetch(url, {
-                  method: 'POST',
-                  headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                  },
-                  body: data,
-              });
-
-              //const text = response.text();
-
-              //console.log(text);
+              console.log(
+                "Capture result",
+                orderData,
+                JSON.stringify(orderData, null, 2)
+              );
 
               // Show a success message within this page, for example:
               const element = document.getElementById("paypal-button-container");
-              element.innerHTML = "";
-              element.innerHTML = "<h3>Thank you for your payment!</h3>";
+              element.innerHTML = "<h3>Thank you for your order!</h3>";
 
               clear_cart();
 
@@ -186,9 +174,35 @@
     }
     initPayPalButton();
   </script>
-  <script type="text/javascript">
-    document.write(httpGet("https://raw.githubusercontent.com/4RE5Team/4re5Team.github.io/main/footer.html"))
-  </script>
+  <div id="footer-elem" style="width: 100%;"></div>
+    <script type="text/javascript">
+      get_header_footer(false, function(content) {
+          if (content) {
+              document.getElementById("footer-elem").innerHTML = content;
+          } else {
+              console.warn("Failed to load footer.");
+          }
+      });
+    </script>
+    <script src="cart/script.js"></script>
+    <script>
+      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products', function (data) {
+              const map = new Map(Object.entries(JSON.parse(data)));
+              map.forEach((_value, key) => {
+                  const map2 = new Map(Object.entries(map.get(key)));
+                  download_url=map2.get('download_url');
+                  get_file(download_url, function (data) {
+                      cart_list = document.getElementById("cart_list");
+                      id=get_import_input("id", data);
+                      products.set(id, data);
+                      
+                      var obj = Object.fromEntries(products);
+                      var jsonString = JSON.stringify(obj);
+                      sessionStorage.setItem("products", jsonString);
+              });
+          });
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
       function confetti()
       {

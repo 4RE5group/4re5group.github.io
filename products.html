@@ -59,7 +59,7 @@
 
       body::-webkit-scrollbar-thumb {
          background-color:white;
-         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+         box-shadow:0 -100vh 0 100vh #5128f5;
        }
 .tooltip {
   position: relative;
@@ -101,14 +101,16 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <script>
-    function httpGet(theUrl) {
-      let xmlHttpReq = new XMLHttpRequest();
-      xmlHttpReq.open("GET", theUrl, false);
-      xmlHttpReq.send(null);
-      return xmlHttpReq.responseText;
-    }
-    document.write(httpGet("https://raw.githubusercontent.com/4RE5group/4re5group.github.io/main/header.html"))
+    <script src="4re5.js"></script>
+    <div id="header-elem" style="width: 100%;"></div>
+    <script type="text/javascript">
+      get_header_footer(true, function(content) {
+          if (content) {
+              document.getElementById("header-elem").innerHTML = content;
+          } else {
+              console.warn("Failed to load header.");
+          }
+      });
     </script>
 
 
@@ -128,40 +130,63 @@
         <section class="home-hero" style="padding-top: 200px;">
       <link href="./products.css" rel="stylesheet" />
 
+
+      <div class="ares-manager-section">
+        <div style="border-radius: 40px; padding: 10px; background-color: white; color: black; width: 80%; max-width: 800px;">
+          <img style="float: left; width: 150px;" src="https://github.com/4RE5group/4re5-manager/blob/main/assets/mockup2.png?raw=true">
+          <h2>4re5 manager</h2>
+          <p>Access lastest updates of 4re5 official apps & projects</p>
+          <div style="display: flex; align-items: center;">
+            <img src="assets/getitforandroid.png" style="width: 100px; height: fit-content;">
+            <img src="assets/getitforwindows.png" style="width: 100px;">
+          </div>
+          
+        </div>
+      </div>
+
+
       <div style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
         <div style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
           <div class="products-container" style="padding: 30px; border-radius: 20px; background: white; width: 100%;">
             <div style="display: flex; flex-direction: row; width: 100%; max-width: 1000px; height: auto;">
-              <h3>Type: </h3>
+              <h3 style="margin-right: 20px;">Type:</h3>
               <select onchange="goto_type(event)" id="product_type" name="products-types">
                 <option value="all">All</option>
               </select>
             </div>
-            <div id="products_list" style="width: 100%; display: flex;flex-direction: row;flex-wrap: wrap;">
+            <br>
+            <div id="products_list" style="gap: 20px; width: 100%; display: flex;flex-direction: row;flex-wrap: wrap;">
               <!-- items will be placed here -->
             </div>
             <div class="products-container4">
-              <button
+              <!-- <button
                 type="button"
                 id="previous_page"
                 class="products-button button"
               >
                 ←
-              </button>
+              </button> -->
               <h1 class="products-text2">Page&nbsp;</h1>
               <h1 id="page_nbr" class="products-text3">1</h1>
               <h1 class="products-text4">&nbsp;of&nbsp;</h1>
               <h1 id="nbr_page_total" class="products-text5">1</h1>
-              <button type="button" id="next_page" class="products-button1 button">
+              <!-- <button type="button" id="next_page" class="products-button1 button">
                 →
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
       </div>
         </section>
+        <div id="footer-elem" style="width: 100%;"></div>
         <script type="text/javascript">
-          document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/footer.html"))
+          get_header_footer(false, function(content) {
+              if (content) {
+                  document.getElementById("footer-elem").innerHTML = content;
+              } else {
+                  console.warn("Failed to load footer.");
+              }
+          });
         </script>
       </div>
     </div>
@@ -216,71 +241,100 @@
       }
     </script>
     <script type="text/javascript">
-      query = window.location.search;
-      query=query.replace("?type=", "");
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
-      fetch('https://api.github.com/repos/4re5group/4re5group.github.io/contents/products')
-       .then(response => response.text())
-       .then(data => {
+var query = window.location.search;
+query = query.replace("?type=", "");
 
-        document.getElementById("products_list").innerHTML = `<h1 id="noitemh1" style="width: 100%; display: flex; align-self: center; justify-content: center;">No items :/</h1>`;
+// Check if data is already stored in cookies
+var storedData = getCookie('productsData');
+if (storedData) {
+    processData(storedData);
+} else {
+    get_file('https://api.github.com/repos/4re5group/4re5group.github.io/contents/products', function (data) {
+      processData(data);
+    });
+}
+
+function processData(data) {
+    document.getElementById("products_list").innerHTML = `<h1 id="noitemh1" style="width: 100%; display: flex; align-self: center; justify-content: center;">No items :/</h1>`;
+
+    const map = new Map(Object.entries(JSON.parse(data)));
+    var totalproducts = 0;
+
+    map.forEach((value, key) => {
+        const map2 = new Map(Object.entries(map.get(key)));
+        var download_url = map2.get('download_url');
+
         
-        const map = new Map(Object.entries(JSON.parse(data)));
-        map.forEach((_value, key) => {
-          const map2 = new Map(Object.entries(map.get(key)));
-          download_url=map2.get('download_url');
-          totalproducts=0;
-          fetch(download_url)
-           .then(response => response.text())
-           .then(data => {
-            totalproducts++;
-            document.getElementById("noitemh1").innerHTML = "Total products: "+totalproducts;
-            type=get_import_input("type", data);
-            if(true)
-            {
-              product_types=document.getElementById("product_type");
-              if(!product_types.innerHTML.includes(type))
-              {
-                product_types.innerHTML+="<option value='"+type+"'>"+type.replace("_", " ")+"</option>";
+
+        get_file(download_url, function (data) {
+                totalproducts++;
+                displayElem(data, totalproducts);
+            });
+    });
+}
+
+function displayElem(data, totalproducts)
+{
+  document.getElementById("noitemh1").innerHTML = "Total products: " + totalproducts;
+  var type = get_import_input("type", data);
+
+  if (true) {
+      var product_types = document.getElementById("product_type");
+      if (!product_types.innerHTML.includes(type)) {
+          product_types.innerHTML += "<option value='" + type + "'>" + type.replace("_", " ") + "</option>";
+      }
+
+      if (product_types.innerHTML.includes(query)) {
+          for (var i = 0; i < product_types.options.length; i++) {
+              if (product_types.options[i].text.replace(" ", "_") == query) {
+                  product_types.selectedIndex = i;
+                  break;
               }
+          }
+      }
 
-              if(product_types.innerHTML.includes(query))
-              {
-                for (var i = 0; i < product_types.options.length; i++) 
-                 {
-                    if (product_types.options[i].text.replace(" ", "_") == query) {
-                        product_types.selectedIndex = i;
-                         break;
-                     }
-                 }
-              }
+      if (type == query || query == null || query == "" || query == " " || type == "not found") {
+          var name = get_import_input("name", data);
+          var desc = get_import_input("description", data);
+          var price = get_import_input("price", data);
+          var id = get_import_input("id", data);
+          var link = get_import_input("link", data);
+          var imageurl = get_import_input("image", data);
 
-
-              if(type == query || query == null || query == "" || query == " " || type=="not found")
-              {
-
-                name=get_import_input("name", data);
-                desc=get_import_input("description", data);
-                price=get_import_input("price", data);
-                id=get_import_input("id", data);
-                link=get_import_input("link", data);
-                imageurl=get_import_input("image", data);
-                newline="`";
-
-                document.getElementById("products_list").innerHTML+=`
-    <div class="products-container2" onclick="load_product('`+name+`', '`+desc+`', '`+imageurl+`', '`+price+`', '`+id+`', '`+link+`')">
-      <div class="products-container3">
-        <img src="`+imageurl+`" alt="`+name+`" class="products-image" />
-                <h1 class="products-text">`+name+`</h1>
-                <span class="products-text1">$`+price+`</span>
-              </div>
-          </div>`;
-              }
-            }
-              })
-            })
-          })
+          document.getElementById("products_list").innerHTML += `
+              <div class="products-container2" onclick="load_product('${name}', '${desc}', '${imageurl}', '${price}', '${id}', '${link}')">
+                  <div class="products-container3">
+                      <img src="${imageurl}" alt="${name}" class="products-image" />
+                      <h1 class="products-text">${name}</h1>
+                      <span class="products-text1">$${price}</span>
+                  </div>
+              </div>`;
+      }
+  }
+}
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
@@ -348,7 +402,7 @@
               </p>
             </div>
             
-            <button id="add_to_cart" style="border-color: white;" onclick="add_item(document.getElementById('item_id').value, document.getElementById('item_quantity').innerHTML)" name="add_to_cart" type="button" class="product-button button">
+            <button id="add_to_cart" onclick="add_item(document.getElementById('item_id').value, document.getElementById('item_quantity').innerText);" style="border-color: white;" name="add_to_cart" type="button" class="product-button button">
               Add to cart
             </button>
             <button id="item_about" style="color: white; border: white;" name="item_about" type="button" class="product-button1 button">
@@ -360,11 +414,27 @@
         </div>
       </div>
     </div>
-      <script src="cart/script.js"></script>
-      <script>loading_svg()</script>
 
+    <script src="cart/script.js">
+      loading_svg();
+    </script>
+    <script>
+      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products', function (data) {
+              const map = new Map(Object.entries(JSON.parse(data)));
+              map.forEach((_value, key) => {
+                  const map2 = new Map(Object.entries(map.get(key)));
+                  download_url=map2.get('download_url');
+                  get_file(download_url, function (data) {
+                      cart_list = document.getElementById("cart_list");
+                      id=get_import_input("id", data);
+                      products.set(id, data);
 
-
-
+                      var obj = Object.fromEntries(products);
+                      var jsonString = JSON.stringify(obj);
+                      sessionStorage.setItem("products", jsonString);
+              });
+          });
+      });
+    </script>
   </body>
 </html>
