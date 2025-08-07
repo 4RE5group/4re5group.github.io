@@ -2,7 +2,7 @@ name: Info gathering
 id: oth2
 description: You wanna get informations about someone or something? we will find them
 price: 60
-image: assets/other.png
+image: /assets/other.png
 link: https://4re5team.github.io/index.html#services
 featured: true
 type: other_service
