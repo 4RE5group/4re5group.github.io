@@ -2,7 +2,7 @@ name: Android small algorithm
 id: and1
 description: You are not a developer and you want a android app? </br> this is made for you </br> up to 300 lines of code
 price: 20
-image: assets/android.png
+image: /assets/android.png
 link: https://4re5team.github.io/index.html#services
 featured: true
 type: android_service
