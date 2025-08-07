@@ -2,7 +2,7 @@ name: Cyber-sec course
 id: oth1
 description: You wanna learn cyber-security? this service is made for you!
 price: 25
-image: assets/other.png
+image: /assets/other.png
 link: https://4re5team.github.io/index.html#services
 featured: true
 type: other_service
