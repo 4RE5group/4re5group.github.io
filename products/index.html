@@ -6,8 +6,8 @@
       name="description"
       content="Browse all 4RE5 group's products, a cyber-security and developers team"
     />
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="og:banner" content="banner.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta property="og:banner" content="../banner.png">
     <meta property="og:title" content="Products - 4re5 group" />
     <meta
       property="og:description"
@@ -98,10 +98,10 @@
   opacity: 1;
 }
     </style>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <script src="4re5.js"></script>
+    <script src="../4re5.js"></script>
     <div id="header-elem" style="width: 100%;"></div>
     <script type="text/javascript">
       get_header_footer(true, function(content) {
@@ -115,7 +115,7 @@
 
 
 
-      <link href="./home.css" rel="stylesheet" />
+      <link href="../home.css" rel="stylesheet" />
 
       
 
@@ -137,8 +137,8 @@
           <h2>4re5 manager</h2>
           <p>Access lastest updates of 4re5 official apps & projects</p>
           <div style="display: flex; align-items: center;">
-            <img src="assets/getitforandroid.png" style="width: 100px; height: fit-content;">
-            <img src="assets/getitforwindows.png" style="width: 100px;">
+            <img src="../assets/getitforandroid.png" style="width: 100px; height: fit-content;">
+            <img src="../assets/getitforwindows.png" style="width: 100px;">
           </div>
           
         </div>
@@ -272,7 +272,7 @@ var storedData = getCookie('productsData');
 if (storedData) {
     processData(storedData);
 } else {
-    get_file('https://api.github.com/repos/4re5group/4re5group.github.io/contents/products', function (data) {
+    get_file('https://api.github.com/repos/4re5group/4re5group.github.io/contents/available-products', function (data) {
       processData(data);
     });
 }
@@ -415,11 +415,11 @@ function displayElem(data, totalproducts)
       </div>
     </div>
 
-    <script src="cart/script.js">
+    <script src="../cart/script.js">
       loading_svg();
     </script>
     <script>
-      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products', function (data) {
+      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/available-products', function (data) {
               const map = new Map(Object.entries(JSON.parse(data)));
               map.forEach((_value, key) => {
                   const map2 = new Map(Object.entries(map.get(key)));

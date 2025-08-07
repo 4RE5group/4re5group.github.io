@@ -5,13 +5,15 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta
       name="description"
-      content="Home of 4RE5, a cyber-security and developers team"
+      content="We are a 🇫🇷 developers and hacking company.
+We're creating user privacy and security focused softwares solutions"
     />
     <meta property="og:title" content="cart - 4RE5 - Future of softwares" />
     <meta property="og:banner" content="banner.png">
     <meta
       property="og:description"
-      content="Home of 4RE5, a cyber-security and developers team"
+      content="We are a 🇫🇷 developers and hacking company.
+We're creating user privacy and security focused softwares solutions"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
@@ -60,7 +62,7 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./home.css" />
   </head>
-  <script src="./cart/script.js"></script>
+  <script src="./script.js"></script>
   <body onload="load_cart()">
     <div>
       <link href="./cart.css" rel="stylesheet" />
@@ -69,7 +71,7 @@
         
         <div id="header-elem" style="width: 100%;">
           <script type="text/javascript" src="https://api.4re5.com/sdk.js"></script>
-          <script src="4re5.js"></script>
+          <script src="../4re5.js"></script>
           <script>
               get_header_footer(true, function(content) {
                   if (content) {
@@ -114,7 +116,7 @@
             </div>
           </div>
           <div class="cart-container13">
-            <button onclick="window.location = './products.html'" type="button" class="cart-button1 button">
+            <button onclick="window.location = '../products/'" type="button" class="cart-button1 button">
               Continue Shopping
             </button>
             <div id="paypal-button-container"><div>
@@ -162,7 +164,7 @@
 
               clear_cart();
 
-              actions.redirect('thank_you.html');
+              actions.redirect('../thank_you.html');
             });
           },
 
@@ -184,9 +186,9 @@
           }
       });
     </script>
-    <script src="cart/script.js"></script>
+    <script src="./script.js"></script>
     <script>
-      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/products', function (data) {
+      get_file('https://api.github.com/repos/4RE5group/4RE5group.github.io/contents/available-products', function (data) {
               const map = new Map(Object.entries(JSON.parse(data)));
               map.forEach((_value, key) => {
                   const map2 = new Map(Object.entries(map.get(key)));
