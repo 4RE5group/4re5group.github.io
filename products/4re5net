@@ -1,0 +1,8 @@
+name: 4re5net
+id: aresnet1
+description: A powerfull tool to manage IOT devices or servers all around the world, apply security patches and maintain network easily
+price: 30
+image:  https://4re5group.github.io/4re5net/icon.png
+link: https://4re5group.github.io/4re5net/
+featured: true
+type: server-monitoring-panel
