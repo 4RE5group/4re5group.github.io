@@ -132,7 +132,11 @@
 
 
       <div class="ares-manager-section">
-        <div style="border-radius: 40px; padding: 10px; background-color: white; color: black; width: 80%; max-width: 800px;">
+        <script>
+          document.body.style.overflowY = "hidden";
+        </script>
+        <div style="border-radius: 40px; padding: 10px; background-color: black; color: white; width: 80%; max-width: 800px;">
+          <img onclick="document.querySelector('.ares-manager-section').style.display = 'none'; document.body.style.overflowY = 'scroll';" src="../assets/cross.png" style="width: 35px; height: 35px; position: relative; right: 5px; top: 5px;">
           <img style="float: left; width: 150px;" src="https://github.com/4RE5group/4re5-manager/blob/main/assets/mockup2.png?raw=true">
           <h2>4re5 manager</h2>
           <p>Access lastest updates of 4re5 official apps & projects</p>

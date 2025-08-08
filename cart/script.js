@@ -23,44 +23,10 @@ if(add_item_to_cart != null)
 cart_content=sessionStorage.getItem("cart");
 
 if(sessionStorage.getItem("products") != null && sessionStorage.getItem("products") != undefined && sessionStorage.getItem("products") != "")
-{
     products = new Map(Object.entries(JSON.parse(sessionStorage.getItem("products"))));
-}
 else
-{
     products = new Map();
-}
 subtotal=0;
-
-
-var speed = 1;
-
-/* Call this function with a string containing the ID name to
- * the element containing the number you want to do a count animation on.*/
-function incEltNbr(id) {
-  elt = document.getElementById(id);
-  endNbr = Number(elt.innerHTML);
-  if(endNbr > 500)
-  {
-    incNbrRec(0, endNbr, elt, 30);
-  }
-  else
-  {
-    incNbrRec(0, endNbr, elt, speed);
-  }
-}
-
-/*A recursive function to increase the number.*/
-function incNbrRec(i, endNbr, elt, speed) {
-  if (i <= endNbr) {
-    elt.innerHTML = i;
-    setTimeout(function() {//Delay a bit before calling the function again.
-      incNbrRec(i + 1, endNbr, elt);
-    });
-  }
-}
-
-
 
 
 // promo system
