@@ -134,11 +134,11 @@ function goto_type(event)
 
     if(text == "all")
     {
-        window.location = "./products.html";
+        window.location = "/products/";
     }
     else
     {
-        window.location = "./products.html?type="+text;
+        window.location = "/products/?type="+text;
     }
 }
 
