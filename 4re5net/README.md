@@ -23,9 +23,9 @@ You can add an account to your device by using start.sh for the first time.
 Accounts can be linked to [4re5 manager](https://github.com/4re5group/4re5-manager) via the avaiable qr code in the profile page
 
 ## Pictures
-![image](https://github.com/user-attachments/assets/226fb690-b632-4efa-9aad-a78282f1fed3)
-![image](https://github.com/user-attachments/assets/b3a00384-c809-443d-830d-fa54952e1778)
-![image](https://github.com/user-attachments/assets/6576a9c2-7ec4-4ca3-bd55-19fc36f00866)
+![image](screen1.png)
+![image](screen2.png)
+![image](screen3.png)
 
 
 Made with ❤️ by 4re5 group
