@@ -71,10 +71,59 @@
 	  <div id="header-elem">
       <script type="text/javascript" src="https://api.4re5.com/sdk.js"></script>
       <script type="text/javascript" src="4re5.js"></script>
+      <script type="text/javascript" src="cart/script.js"></script>
       <script>
           get_header_footer(true, function(content) {
               if (content) {
                   document.getElementById("header-elem").innerHTML = content;
+                  document.getElementsByTagName('body')[0].onscroll = function() {
+                    try {
+                        var links = document.querySelectorAll(".home-links1 a"); // Select all links
+                        var logo = document.querySelector(".home-logo1");
+
+                        var elemsArray = [
+                            document.getElementById("products-div"),
+                            document.getElementById("projects-div"),
+                            document.getElementById("need-a-software-div"),
+                            document.querySelector(".home-social"), // Added dot for class selection
+                            document.querySelector(".home-faq") // Added dot for class selection
+                        ];
+
+                        // Reset styles before applying new ones
+                        links.forEach(function(link) {
+                            link.style.color = "white";
+                        });
+                        if (logo) {
+                            logo.style.filter = "invert(0)";
+                        }
+
+                        // Check for overlaps and apply styles
+                        elemsArray.forEach(function(elem) {
+                            if (elem) {
+                                var elemRect = elem.getBoundingClientRect();
+
+                                links.forEach(function(link) {
+                                    var linkRect = link.getBoundingClientRect();
+
+                                    // Check if the link is overlapping with the current element
+                                    var isOverlapping = !(linkRect.right < elemRect.left ||
+                                                          linkRect.left > elemRect.right ||
+                                                          linkRect.bottom < elemRect.top ||
+                                                          linkRect.top > elemRect.bottom);
+
+                                    if (isOverlapping) {
+                                        link.style.color = "black"; // Change color of the specific link
+                                        if (logo) {
+                                            logo.style.filter = "invert(1)";
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    } catch (e) {
+                        console.error(e);
+                    }
+                };
               } else {
                   console.warn("Failed to load header.");
               }
@@ -970,7 +1019,7 @@
               <span class="home-text006">
                 Join us on this journey as <strong>we continue to push the boundaries of what's possible in the digital world</strong>. At 4re5, we're not <strong>just building software</strong>; <strong>we're building a safer, more enjoyable future for everyone.</strong>
               </span>
-              <span class="home-text006">Provide support ♥</span>
+              <span id="donate" class="home-text006">Provide support ♥</span>
             </div>
             <div id="donate-button-container">
               <div id="donate-button"></div>
