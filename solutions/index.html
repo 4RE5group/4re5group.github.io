@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Solutions - 4re5 group</title>
+    <meta
+      name="description"
+      content="Browse all 4RE5 group's available software solutions made for everyone"
+    />
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta property="og:banner" content="../banner.png">
+    <meta property="og:title" content="Solutions - 4re5 group" />
+    <meta
+      property="og:description"
+      content="Browse all 4RE5 group's available software solutions made for everyone"
+    />
+    <meta
+      property="og:image"
+      content=""
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;
+       }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .cart_view {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  transform: translateY(40px);
+  z-index: 1;
+  margin-left: -250px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .cart_view::after {
+  content: "";
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .cart_view {
+  visibility: visible;
+  opacity: 1;
+}
+    </style>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body onload="load_page(1)">
+    <script src="../4re5.js"></script>
+    <div id="header-elem" style="width: 100%;"></div>
+    <script type="text/javascript">
+      get_header_footer(true, function(content) {
+          if (content) {
+              document.getElementById("header-elem").innerHTML = content;
+          } else {
+              console.warn("Failed to load header.");
+          }
+      });
+    </script>
+
+
+
+      <link href="../home.css" rel="stylesheet" />
+
+      
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <section class="home-hero" style="padding-top: 200px;">
+      <link href="../products/products.css" rel="stylesheet" />
+
+      <div style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
+        <div style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
+          <div class="products-container" style="padding: 30px; border-radius: 20px; background: white; width: 100%;">
+            <div style="display: flex; flex-direction: row; width: 100%; max-width: 1000px; height: auto;">
+              <h3 style="margin-right: 20px;">Type:</h3>
+              <select onchange="load_page(currentPage)" id="product_type" name="products-types">
+                <option value="all">All</option>
+                <option value="0">Windows</option>
+                <option value="1">Android</option>
+                <option value="2">Linux</option>
+              </select>
+              <h3 style="margin-right: 20px;">Sort by:</h3>
+              <select onchange="load_page(currentPage)" id="product_sort" name="products-sort">
+                <option value="default">default</option>
+                <option value="first-date">Newest to latest</option>
+                <option value="last-date">Latest to newest</option>
+                <option value="2">Linux</option>
+              </select>
+            </div>
+            <br>
+            <div id="products_list" style="gap: 10px; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap;">
+                <!-- items will be placed here -->
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <button style="display: none;" id="leftArrow" onclick="movePage(-1)">←</button>
+              <h1 class="products-text2">Page&nbsp;</h1>
+              <h1 id="page_nbr" class="products-text3">1</h1>
+              <h1 class="products-text4">&nbsp;of&nbsp;</h1>
+              <h1 id="nbr_page_total" class="products-text5">1</h1>
+              <button id="rightArrow" onclick="movePage(1)">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </section>
+        <div id="footer-elem" style="width: 100%;"></div>
+        <script type="text/javascript">
+          get_header_footer(false, function(content) {
+              if (content) {
+                  document.getElementById("footer-elem").innerHTML = content;
+              } else {
+                  console.warn("Failed to load footer.");
+              }
+          });
+        </script>
+      </div>
+    </div>
+
+    <script>
+        var max_per_page = 9;
+        document.getElementById("products_list").style.height = (max_per_page * 120 + 10 * (max_per_page - 1)) + "px";
+        var currentPage = 1;
+        var total_elem = 0;
+
+        function movePage(vect)
+        {
+            var max_page = Math.trunc(total_elem / max_per_page) + (total_elem / max_per_page != Math.trunc(total_elem / max_per_page));
+            currentPage+=vect;
+            document.getElementById("leftArrow").style.display = "none";
+            document.getElementById("rightArrow").style.display = "none";
+            if (currentPage > 1)
+                document.getElementById("leftArrow").style.display = "block";
+            if (currentPage < max_page)
+                document.getElementById("rightArrow").style.display = "block";
+            load_page(currentPage);
+        }
+        
+        function sort_by(array, key)
+        {
+            console.log("sorting with: ", key);
+            switch(key) {
+                case "first-date":
+                    return array.sort(
+                        function(a, b)
+                        {
+                            var x = new Date(a["first_date"]).getTime();
+                            var y = new Date(b["first_date"]).getTime();
+                            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+                        });
+                case "last-date":
+                    return array.sort(
+                        function(a, b)
+                        {
+                            var x = new Date(a["first_date"]).getTime();
+                            var y = new Date(b["first_date"]).getTime();
+                            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                        });
+                default:
+                    return (array);
+            }
+        }
+
+        function load_page(nb)
+        {
+            document.getElementById("page_nbr").innerText = nb;
+            var only_platform = document.getElementById('product_type').value;
+            var sorting_by = document.getElementById('product_sort').value;
+
+            get_file("https://raw.githubusercontent.com/4RE5group/4re5-repository/refs/heads/main/repo.json", 
+            function (data) 
+            {
+                document.getElementById("products_list").innerHTML = "";
+                var map = sort_by(JSON.parse(data), sorting_by);
+                total_elem = map.length;
+                
+
+                i = 0;
+                map.forEach(elem => {
+                    if (elem.disabled != "true" && (nb * max_per_page) > i && i >= ((nb - 1) * max_per_page))
+                    {
+                        win = false;
+                        and = false;
+                        lin = false;
+                        max_ver = 0;
+                        found = false;
+
+                        max_version_text = "v1.0";
+
+                        platform = elem.platform;
+                        platform.forEach(p => {
+                            if (only_platform == p.platformid)
+                                found = true;
+                            if (p.platformid == 0)
+                                win = true;
+                            else if(p.platformid == 1)
+                                and = true;
+                            else if (p.platformid == 2)
+                                lin = true;
+
+                                if (get_version(p.version) > max_ver) {
+                                    max_ver = get_version(p.version);
+                                    max_version_text = p.version;
+                                }
+                        });
+                        if (only_platform == "all" || found) {
+                            document.getElementById("products_list").innerHTML += `<a href="./view/?id=` + i + `"><div style="padding: 10px; align-items: center;width: 100%; height: 120px; background-color: transparent; display: flex; border: 1px solid black;">
+                                <img style="margin-right: 10px; float: left; width: 90px; height: 90px;" src="` + ((elem.image == "")?"https://github.com/4RE5group/4re5-repository/blob/main/default.png?raw=true":elem.image) + `">
+                                <div style="color: black; width: 100%;">
+                                    <div style="width: 100%; display: flex; gap: 7px;">
+                                        ` + ((win == true)?`<p style="background-color: #0078d4; padding: 5px; color: white; border-radius: 12px; width: max-content;">Windows</p>`:"") + `
+                                        ` + ((and == true)?`<p style="background-color: #31a049; padding: 5px; color: white; border-radius: 12px; width: max-content;">Android</p>`:"") + `
+                                        ` + ((lin == true)?`<p style="background-color: #000000; padding: 5px; color: white; border-radius: 12px; width: max-content;">Linux</p>`:"") + `
+                                        <p style="display: flex; width: 100%; align-self: center; justify-content: right;">lastest: v` + max_version_text + `</p>
+                                    </div>
+                                    <h2>` + elem.name + `</h2>
+                                    <p>` + elem.description + `</p>
+                                </div>
+                            </div></a>`;
+                            // i++;
+                        }
+                    }
+                    else if (elem.disabled == "true")
+                        total_elem--;
+                    i++;
+                });
+                document.getElementById("nbr_page_total").innerText = Math.trunc(total_elem / max_per_page) + (total_elem / max_per_page != Math.trunc(total_elem / max_per_page));
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
+      function confetti()
+      {
+        var myConfetti = confetti.create(canvas, {
+            resize: false,
+            useWorker: true
+          });
+          myConfetti({
+            particleCount: 500,
+            spread: 160
+          });
+      }
+    </script>
+
+    <!-- CSS -->
+    <style>
+    #confetti-canvas {
+      position: fixed; 
+      z-index: 999; 
+      top: 0; 
+      left: 0; 
+      width: 100vw; 
+      height: 100vh; 
+      pointer-events: none;
+    }
+    </style>
+
+
+    <script src="../cart/script.js">
+      loading_svg();
+    </script>
+  </body>
+</html>

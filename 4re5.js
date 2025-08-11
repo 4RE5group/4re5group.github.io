@@ -23,6 +23,12 @@ function get_import_input(key, data) {
     return match ? match[1] : "";
 }
 
+// Returns the float value of a version name
+function get_version(v)
+{
+    return (Number(v.replaceAll("beta", "").replaceAll(" ", "").replace(".", "#").replaceAll(".", "").replaceAll("#", ".")));
+}
+
 
 function get_file(url, callback)
 {

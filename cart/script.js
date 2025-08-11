@@ -180,7 +180,7 @@ function process_item(item)
 <div class="" style="margin-bottom: 10px; width: 100%;height: 150px;display: flex;background: #1c1c1c;justify-content: center;text-align: center;align-content: center;border-radius: 20px;align-content: center;">
     <img src="`+get_product_by_id(id, "image")+`" style="width: 100px;height: 100px;margin-top: 25px;flex-direction: row;display: flex;">
     <div style="justify-content: center;text-align: center;display: flex;flex-direction: column;">
-        <div style="width: 100%;justify-content: end;display: flex;"><img id="close_`+id+`" onclick="delete_item('`+id+`', '`+quantity+`')" src="assets/cross.png" style="width: 24px;height: 24px;position: relative;top: 0px;right: 0px;"></div>
+        <div style="width: 100%;justify-content: end;display: flex;"><img id="close_`+id+`" onclick="delete_item('`+id+`', '`+quantity+`')" src="/assets/cross.png" style="width: 24px;height: 24px;position: relative;top: 0px;right: 0px;"></div>
     <h3>`+get_product_by_id(id, "name")+`</h3>
     <p>$`+get_product_by_id(id, "price")+`</p>
 <div style="display: flex;margin-top: 10px;">

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>View Solution - 4re5 group</title>
+    <meta
+      name="description"
+      content="Browse all 4RE5 group's available software solutions made for everyone"
+    />
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta property="og:banner" content="../../banner.png">
+    <meta property="og:title" content="View Solution - 4re5 group" />
+    <meta
+      property="og:description"
+      content="Browse all 4RE5 group's available software solutions made for everyone"
+    />
+    <meta
+      property="og:image"
+      content=""
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;
+       }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .cart_view {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  transform: translateY(40px);
+  z-index: 1;
+  margin-left: -250px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .cart_view::after {
+  content: "";
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .cart_view {
+  visibility: visible;
+  opacity: 1;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+  a {
+    text-decoration: underline;
+    color: #0078d4;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.top-div {
+  width: 100%;
+  display: flex;
+}
+
+.products-container {
+  overflow-x: hidden !important;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+  width: 100%;
+}
+
+@media(max-width: 500px)
+{
+  .top-div {
+    flex-direction: column;
+  }
+  
+  #outer_ring, #inner_ring {
+    padding: 20px !important;
+  }
+
+  td, th {
+    padding: 5px;
+  }
+}
+    </style>
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <script src="../../4re5.js"></script>
+    <div id="header-elem" style="width: 100%;"></div>
+    <script type="text/javascript">
+      get_header_footer(true, function(content) {
+          if (content) {
+              document.getElementById("header-elem").innerHTML = content;
+          } else {
+              console.warn("Failed to load header.");
+          }
+      });
+    </script>
+
+    <section class="home-hero" style="padding-top: 200px;">
+      <link href="../../home.css" rel="stylesheet" />
+      <link href="../solutions.css" rel="stylesheet" />
+      <link href="../../products/products.css" rel="stylesheet" />
+
+      <div id="outer_ring" style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
+        <div id="inner_ring" style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
+          <div class="products-container">
+            <div class="top-div">
+              <img  id="appicon" style="width: 150px; height: 150px;" src=""> <!-- appicon -->
+              <div style="padding: 10px; display: flex; flex-direction: column; width: 100%;">
+                <div style="width: 100%; display: flex; flex-direction: row;">
+                  <h1 style="width: calc(100% - 30px);" id="appname"></h1> <!-- appname -->
+                  <a id="appgithub" href=""><img src="../../assets/github_icon.png" style="width: 30px; height: 30px;"></a>
+                </div>
+                <p id="appdesc" style="height: -webkit-fill-available;"></p> <!-- appdesc -->
+                <div style="width: 100%; gap: 20px; display: flex;"> 
+                  <p id="win" style="display: none; background-color: #0078d4; padding: 5px; color: white; border-radius: 12px; width: max-content;">Windows</p>
+                  <p id="and" style="display: none; background-color: #31a049; padding: 5px; color: white; border-radius: 12px; width: max-content;">Android</p>
+                  <p id="lin" style="display: none; background-color: #000000; padding: 5px; color: white; border-radius: 12px; width: max-content;">Linux</p>
+                </div>
+                
+              </div>
+            </div>
+            <br>
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 10px">
+              <div style="display: flex; justify-content: space-between;">
+                <p id="appfirst-date">first release: 01-01-1970</p>
+                <p id="appversion">version: v1.0</p>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <p>author: <span id="appauthor" style="padding: 3px; background-color: #ff8500; color: white; font-size: 14px; border-radius: 20px; padding: 2px;">@4re5 group</span></p>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <p id="applicense">under license: </p>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <table id="appdownload">
+                   <tr>
+                    <th>Platform</th>
+                    <th>Version</th>
+                    <th>Download</th>
+                  </tr>
+                  
+                </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+        </section>
+        <div id="footer-elem" style="width: 100%;"></div>
+        <script type="text/javascript">
+          get_header_footer(false, function(content) {
+              if (content) {
+                  document.getElementById("footer-elem").innerHTML = content;
+              } else {
+                  console.warn("Failed to load footer.");
+              }
+          });
+        </script>
+      </div>
+    </div>
+
+    <script>
+          get_file("https://raw.githubusercontent.com/4RE5group/4re5-repository/refs/heads/main/repo.json", 
+          function (data) 
+          {
+              var query = window.location.search.replace("?id=", "");
+
+              if (query.trim() == "")
+              {
+                alert("app id no found");
+                window.location = "../";
+              }
+
+              query = Number(query);
+
+              var map = JSON.parse(data);
+              i = 0;
+              map.forEach(elem => {
+                  if (i == query)
+                  {
+                      max_version_text = "v1.0";
+
+                      platform = elem.platform;
+                      platform.forEach(p => {
+                          if (p.platformid == 0)
+                            document.getElementById("win").style.display = "block";
+                          else if(p.platformid == 1)
+                            document.getElementById("and").style.display = "block";
+                          else if (p.platformid == 2)
+                            document.getElementById("lin").style.display = "block";
+
+                          document.getElementById("appdownload").innerHTML += `
+<tr>
+  <td>` + p.name + `</td>
+  <td>v` + p.version + `</td>
+  <td><a href="` + p.url + `">download</a></td>
+</tr>`;
+
+                          if (get_version(p.version) > get_version(max_version_text))
+                            max_version_text = p.version;
+                      });
+                      document.getElementById("appname").innerText = elem.name;
+                      document.getElementById("appicon").src = ((elem.image != "")?elem.image:"https://github.com/4RE5group/4re5-repository/blob/main/default.png?raw=true");
+                      document.getElementById("appdesc").innerText = elem.description;
+                      document.getElementById("appgithub").setAttribute("href", elem.github);
+                      
+                      document.getElementById("appfirst-date").innerText = "first release: "+elem.first_date;
+                      document.getElementById("appversion").innerText = "version: "+max_version_text;
+                      
+                      document.getElementById("appauthor").innerText = "@"+elem.author;
+                      document.getElementById("applicense").innerText = "under license: " + elem.license;
+                  }
+                  i++;
+              });
+          });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
+      function confetti()
+      {
+        var myConfetti = confetti.create(canvas, {
+            resize: false,
+            useWorker: true
+          });
+          myConfetti({
+            particleCount: 500,
+            spread: 160
+          });
+      }
+    </script>
+
+    <!-- CSS -->
+    <style>
+    #confetti-canvas {
+      position: fixed; 
+      z-index: 999; 
+      top: 0; 
+      left: 0; 
+      width: 100vw; 
+      height: 100vh; 
+      pointer-events: none;
+    }
+    </style>
+
+
+    <script src="../../cart/script.js">
+      loading_svg();
+    </script>
+  </body>
+</html>
