@@ -97,7 +97,69 @@
   visibility: visible;
   opacity: 1;
 }
-    </style>
+
+.solution_icon {
+  margin-right: 10px;
+  float: left;
+  width: 90px;
+  height: 90px;
+}
+
+.solution_view {
+  padding: 10px; 
+  align-items: center;
+  width: 100%; 
+  /*height: 150px;*/ 
+  background-color: transparent; 
+  display: flex; 
+  border: 1px solid black;
+}
+
+.tags_div {
+  width: 100%; 
+  display: flex; 
+  gap: 7px;
+}
+
+@media(max-width: 660px)
+{
+  .solution_icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+@media(max-width: 550px)
+{
+  .products-container, #outer_ring, #inner_ring {
+    padding: 20px !important;
+  }
+
+  .selects_params {
+    flex-direction: column !important;
+  }
+
+  .solution_view {
+    flex-direction: column !important;
+  }
+
+  .solution_icon {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .tags_div {
+    display: block !important;
+  }
+}
+
+@media(max-width: 300px)
+{
+  .products-container, #outer_ring, #inner_ring {
+    padding: 15px !important;
+  }
+}
+</style>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body onload="load_page(1)">
@@ -115,25 +177,15 @@
 
 
 
-      <link href="../home.css" rel="stylesheet" />
-
       
 
-
-
-
-
-
-
-          </div>
-        </div>
-        <section class="home-hero" style="padding-top: 200px;">
+    <section class="home-hero" style="padding-top: 200px;">
       <link href="../products/products.css" rel="stylesheet" />
-
-      <div style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
-        <div style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
-          <div class="products-container" style="padding: 30px; border-radius: 20px; background: white; width: 100%;">
-            <div style="display: flex; flex-direction: row; width: 100%; max-width: 1000px; height: auto;">
+      <link href="../home.css" rel="stylesheet" />
+      <div id="outer_ring" style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
+        <div id="inner_ring" style="border-radius: 35px; padding: 30px; background: #ffd699; width: 100%;">
+          <div class="products-container" style="padding: 20px; border-radius: 20px; background: white; width: 100%;">
+            <div class="selects_params" style="display: flex; flex-direction: row; width: 100%; max-width: 1000px; height: auto;">
               <h3 style="margin-right: 20px;">Type:</h3>
               <select onchange="load_page(currentPage)" id="product_type" name="products-types">
                 <option value="all">All</option>
@@ -146,7 +198,6 @@
                 <option value="default">default</option>
                 <option value="first-date">Newest to latest</option>
                 <option value="last-date">Latest to newest</option>
-                <option value="2">Linux</option>
               </select>
             </div>
             <br>
@@ -180,7 +231,7 @@
 
     <script>
         var max_per_page = 9;
-        document.getElementById("products_list").style.height = (max_per_page * 120 + 10 * (max_per_page - 1)) + "px";
+        document.getElementById("products_list").style.minHeight = (max_per_page * 120 + 10 * (max_per_page - 1)) + "px";
         var currentPage = 1;
         var total_elem = 0;
 
@@ -265,14 +316,14 @@
                                 }
                         });
                         if (only_platform == "all" || found) {
-                            document.getElementById("products_list").innerHTML += `<a href="./view/?id=` + i + `"><div style="padding: 10px; align-items: center;width: 100%; height: 120px; background-color: transparent; display: flex; border: 1px solid black;">
-                                <img style="margin-right: 10px; float: left; width: 90px; height: 90px;" src="` + ((elem.image == "")?"https://github.com/4RE5group/4re5-repository/blob/main/default.png?raw=true":elem.image) + `">
+                            document.getElementById("products_list").innerHTML += `<a href="./view/?id=` + i + `"><div class="solution_view">
+                                <img class="solution_icon" src="` + ((elem.image == "")?"https://github.com/4RE5group/4re5-repository/blob/main/default.png?raw=true":elem.image) + `">
                                 <div style="color: black; width: 100%;">
-                                    <div style="width: 100%; display: flex; gap: 7px;">
+                                    <div class="tags_div">
                                         ` + ((win == true)?`<p style="background-color: #0078d4; padding: 5px; color: white; border-radius: 12px; width: max-content;">Windows</p>`:"") + `
                                         ` + ((and == true)?`<p style="background-color: #31a049; padding: 5px; color: white; border-radius: 12px; width: max-content;">Android</p>`:"") + `
                                         ` + ((lin == true)?`<p style="background-color: #000000; padding: 5px; color: white; border-radius: 12px; width: max-content;">Linux</p>`:"") + `
-                                        <p style="display: flex; width: 100%; align-self: center; justify-content: right;">lastest: v` + max_version_text + `</p>
+                                        <p style="display: flex; width: 100%; align-self: center; justify-content: right;">v` + max_version_text + `</p>
                                     </div>
                                     <h2>` + elem.name + `</h2>
                                     <p>` + elem.description + `</p>

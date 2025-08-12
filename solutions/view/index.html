@@ -260,7 +260,7 @@ tr:nth-child(even) {
 <tr>
   <td>` + p.name + `</td>
   <td>v` + p.version + `</td>
-  <td><a href="` + p.url + `">download</a></td>
+  <td><a href="` + p.url + `">` + ((elem.price == "free")?"download":("buy for "+elem.price)) + `</a></td>
 </tr>`;
 
                           if (get_version(p.version) > get_version(max_version_text))
