@@ -1173,18 +1173,7 @@
           <div>
           </div>
         </section>
-        <script>
-          // load 4re5 sdk
-          try {
-            load_login(); 
-            openPopup();
-          }
-          catch (e)
-          {
-            console.warn("4re5 sdk could not be loaded");
-          }
-        </script>
-        <div id="footer-elem" style="width: 100%;"></div>
+	<div id="footer-elem" style="width: 100%;"></div>
         <script type="text/javascript">
           get_header_footer(false, function(content) {
               if (content) {
@@ -1220,6 +1209,18 @@
           incEltNbr("users");
           incEltNbr("ideas");
         </script>
+	<script>
+          // load 4re5 sdk
+          try {
+            load_login(); 
+            //openPopup();
+          }
+          catch (e)
+          {
+            console.warn("4re5 sdk could not be loaded");
+          }
+        </script>
+
       </div>
     </div>
   </body>
