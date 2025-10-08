@@ -266,7 +266,7 @@
 	background-color: white;
 	border-radius: 50px;
   width: 100%;
-	max-width: 1000px;
+	max-width: 1300px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -2536,4 +2536,5 @@
     margin: 0px;
   }
 }
+
 
