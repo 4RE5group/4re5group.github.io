@@ -351,7 +351,7 @@
 }
 .home-header {
   display: flex;
-  margin-top: 300px;
+  margin-top: calc(calc(100vh / 2) - 150px);
   align-items: center;
   flex-direction: column;
 }
@@ -2536,3 +2536,4 @@
     margin: 0px;
   }
 }
+
