@@ -2,8 +2,8 @@
     4re5 group 2025, all rights reserved.
 */
 
-var header_url = "https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/header.html";
-var footer_url = "https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/footer.html";
+var header_url = "/header.html";
+var footer_url = "/footer.html";
 
 // Register the service worker
 if ('serviceWorker' in navigator) {

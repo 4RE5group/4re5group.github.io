@@ -163,7 +163,7 @@ tr:nth-child(even) {
 
     <section class="home-hero" style="padding-top: 200px;">
       <link href="../../home.css" rel="stylesheet" />
-      <link href="../solutions.css" rel="stylesheet" />
+      <!--<link href="../solutions.css" rel="stylesheet" />-->
       <link href="../../products/products.css" rel="stylesheet" />
 
       <div id="outer_ring" style="border-radius: 50px; padding: 30px; background: #ffb442; width: 100%;">
@@ -249,16 +249,18 @@ tr:nth-child(even) {
 
                       platform = elem.platform;
                       platform.forEach(p => {
-                          if (p.platformid == 0)
+                          if (p.platform == undefined)
+                            p.platform = "unknown";
+                          if (p.platform == "windows")
                             document.getElementById("win").style.display = "block";
-                          else if(p.platformid == 1)
+                          else if(p.platform == "android")
                             document.getElementById("and").style.display = "block";
-                          else if (p.platformid == 2)
+                          else if (p.platform == "linux")
                             document.getElementById("lin").style.display = "block";
 
                           document.getElementById("appdownload").innerHTML += `
 <tr>
-  <td>` + p.name + `</td>
+  <td style='text-transform: capitalize;'>` + p.platform + `</td>
   <td>v` + p.version + `</td>
   <td><a href="` + p.url + `">` + ((elem.price == "free")?"download":("buy for "+elem.price)) + `</a></td>
 </tr>`;

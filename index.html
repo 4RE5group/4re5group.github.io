@@ -195,261 +195,77 @@
           <div class="home-title">
             <span id="products" class="home-text008">Our Products</span>
           </div>
-          <div class="home-cards">
-            <div class="home-container1" style="flex-direction: column;">
-              <style>
-                .mySlides {display: none}
-                img {vertical-align: middle;}
-
-                /* Slideshow container */
-                .slideshow-container {
-                  max-width: 1000px;
-                  position: relative;
-                  margin: auto;
-                }
-
-                /* Next & previous buttons */
-                .prev, .next {
-                  cursor: pointer;
-                  position: absolute;
-                  top: 50%;
-                  width: auto;
-                  padding: 16px;
-                  margin-top: -22px;
-                  color: white;
-                  font-weight: bold;
-                  font-size: 18px;
-                  transition: 0.6s ease;
-                  border-radius: 0 3px 3px 0;
-                  user-select: none;
-                }
-
-                /* Position the "next button" to the right */
-                .next {
-                  right: 0;
-                  border-radius: 3px 0 0 3px;
-                }
-
-                /* On hover, add a black background color with a little bit see-through */
-                .prev:hover, .next:hover {
-                  background-color: rgba(0,0,0,0.8);
-                }
-
-                /* Caption text */
-                .text {
-                  color: white;
-                  font-size: 40px;
-                  padding: 8px 12px;
-                  position: absolute;
-                  top: 50%;
-                  width: 100%;
-                  text-align: center;
-                }
-
-                .text2 {
-                  color: white;
-                  font-size: 30px;
-                  padding: 8px 12px;
-                  position: absolute;
-                  top: 65%;
-                  width: 100%;
-                  text-align: center;
-                }
-
-                /* Number text (1/3 etc) */
-                .numbertext {
-                  color: #f2f2f2;
-                  font-size: 12px;
-                  padding: 8px 12px;
-                  position: absolute;
-                  top: 0;
-                }
-
-                /* The dots/bullets/indicators */
-                .dot {
-                  cursor: pointer;
-                  height: 15px;
-                  width: 15px;
-                  margin: 0 2px;
-                  background-color: #bbb;
-                  border-radius: 50%;
-                  display: inline-block;
-                  transition: background-color 0.6s ease;
-                }
-
-                .active, .dot:hover {
-                  background-color: #717171;
-                }
-
-                /* Fading animation */
-                .fade {
-                  animation-name: fade;
-                  animation-duration: 1.5s;
-                }
-
-                @keyframes fade {
-                  from {opacity: .4} 
-                  to {opacity: 1}
-                }
-
-                /* On smaller screens, decrease text size */
-                @media only screen and (max-width: 300px) {
-                  .prev, .next,.text {font-size: 30px; font-family: inherit;}
-                }
-                .text {
-                  font-family: inherit;
-                  font-size: 40px;
-                }
-                .text2 {
-                  color: white;
-                  font-family: inherit;
-                  font-size: 30px;
-                }
-                </style>
-
-                <div class="slideshow-container" style="cursor: pointer; width: 100%; background: black; height: 400px;">
-
-                <a href="./products/?type=hacking_phone"><div class="mySlides fade">
-                  <div class="numbertext">1/3</div>
-                  <img src="assets/Screenshot 2024-08-26 193456.png" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
-                  <div class="text">Hacking Devices</div>
-                  <div class="text2">Click to browse ►</div>
-                </div></a>
-
-                <a href="./products/?type=software"><div class="mySlides fade">
-                  <div class="numbertext">2/3</div>
-                  <img src="assets/banner.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
-                  <div class="text">Softwares</div>
-                  <div class="text2">Click to browse ►</div>
-                </div></a>
-                
-
-                <a href="./products/?type=hacking_software"><div class="mySlides fade">
-                  <div class="numbertext">3/3</div>
-                  <img src="https://eccommonstorage.blob.core.windows.net/codered/uploads/LP54CZ8FgEWX7FRTVHjFmnnQ7gZKvz38cbJ7NWP4.jpg" style="filter: brightness(0.7); width:100%; height: 400px; object-fit: cover;">
-                  <div class="text">Hacking Softwares</div>
-                  <div class="text2">Click to browse ►</div>
-                </div></a>
-
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
-                </div>
-                <br>
-
-                <div style="text-align:center">
-                  <span class="dot" onclick="currentSlide(1)"></span> 
-                  <span class="dot" onclick="currentSlide(2)"></span> 
-                  <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
-
-                <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                  showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                  showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                  let i;
-                  let slides = document.getElementsByClassName("mySlides");
-                  let dots = document.getElementsByClassName("dot");
-                  if (n > slides.length) {slideIndex = 1}    
-                  if (n < 1) {slideIndex = slides.length}
-                  for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                  }
-                  for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                  }
-                  slides[slideIndex-1].style.display = "block";  
-                  dots[slideIndex-1].className += " active";
-                }
-                </script>
-            </div>
+          <div class="products-carousel">
+            <a href="./products/?type=hacking_phone" class="product-item">
+              <div class="product-image-wrapper">
+                <img src="assets/Screenshot 2024-08-26 193456.png" alt="Hacking Devices">
+              </div>
+              <div class="product-info">
+                <h3>Hacking Devices</h3>
+                <p>Click to browse <span class="arrow">►</span></p>
+              </div>
+            </a>
+            
+            <a href="./products/?type=software" class="product-item">
+              <div class="product-image-wrapper">
+                <img src="assets/banner.jpg" alt="Softwares">
+              </div>
+              <div class="product-info">
+                <h3>Softwares</h3>
+                <p>Click to browse <span class="arrow">►</span></p>
+              </div>
+            </a>
+            
+            <a href="./products/?type=hacking_software" class="product-item">
+              <div class="product-image-wrapper">
+                <img src="https://eccommonstorage.blob.core.windows.net/codered/uploads/LP54CZ8FgEWX7FRTVHjFmnnQ7gZKvz38cbJ7NWP4.jpg" alt="Hacking Softwares">
+              </div>
+              <div class="product-info">
+                <h3>Hacking Softwares</h3>
+                <p>Click to browse <span class="arrow">►</span></p>
+              </div>
+            </a>
           </div>
           <a href="./products/" class="home-link6">
             <h1 class="home-text013">See more →</h1>
           </a>
         </section>
-        <section style="padding-top: 0px; width: 100%; margin: 0px; padding: 0px; padding-bottom: 20px;" id="projects-div" class="home-features">
+        <section style="padding: 40px 0px 20px 0px; width: 100%; margin: 0px; background: transparent;" id="projects-div" class="home-features">
           <h1 class="home-text008">Our projects</h1>
-          <div class="slider">
-            <div class="slide-track" id="slideCaroussel">
-              <div class="slide">
-                  <div class="project_card">
-                    <img src="https://github.com/d3m0n-project/d3m0n_c1/blob/main/d3m0n_c1_preview.png?raw=true" style="object-fit: cover; margin-right: 10px; margin-left: 10px; border-radius: 5px; width: 95%; height: 200px; ">                
-                        <h1>d3m0n c1</h1>
-                        <p style="height: 100%; color: #acabab">The world first hacking phone gadget that includes IR, RF, Wifi, Bluetooth hacking, BadUSB and lot more</p>
-                        <p style="gap: 5px; color: #acabab; display: flex; align-items: center;">
-                          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#acabab"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="none" d="M17.496 4c-1.425 0-3.378.256-4.597 1.475C10.794 7.58 9.391 9.03 9.388 9.033c-.24.247-.593.354-.923.283-.007 0-2.248-.435-3.948.504l9.694 9.694c.943-1.702.541-3.919.536-3.944a1.002 1.002 0 0 1 .273-.903l3.536-3.535c1.896-1.896 1.516-5.498 1.271-6.929A14.143 14.143 0 0 0 17.496 4zm-.354 5.718a2 2 0 1 1-2.828-2.828 2 2 0 0 1 2.828 2.828z"></path><path d="M20.92 2.384A15.511 15.511 0 0 0 17.496 2c-2.585 0-4.663.713-6.011 2.061A368.762 368.762 0 0 0 8.31 7.273c-1.214-.137-4.077-.203-6.017 1.738a.996.996 0 0 0 0 1.414l11.313 11.313a.997.997 0 0 0 1.414 0c1.954-1.953 1.894-4.814 1.767-6.01l3.184-3.183c3.191-3.191 1.74-9.182 1.677-9.435a1 1 0 0 0-.728-.726zm-2.363 8.748-3.536 3.535a.999.999 0 0 0-.273.903c.005.025.407 2.242-.536 3.944L4.517 9.82c1.7-.938 3.941-.504 3.948-.504.33.07.684-.036.923-.283.003-.003 1.406-1.453 3.512-3.559C14.118 4.256 16.071 4 17.496 4c.947 0 1.793.111 2.332.203.244 1.431.625 5.032-1.271 6.929z"></path><circle cx="15.728" cy="8.304" r="2"></circle><path d="M5 16c-2 1-2 5-2 5s3 0 5-2l-3-3z"></path></g></svg>
-                          C++</p>
-                        <p style="gap: 5px; color: #acabab; display: flex; align-items: center;">
-                          <svg fill="#acabab" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19 10V7c0-1.103-.897-2-2-2h-3c0-1.654-1.346-3-3-3S8 3.346 8 5H5c-1.103 0-2 .897-2 2v3.881l.659.239C4.461 11.41 5 12.166 5 13s-.539 1.59-1.341 1.88L3 15.119V19c0 1.103.897 2 2 2h3.881l.239-.659C9.41 19.539 10.166 19 11 19s1.59.539 1.88 1.341l.239.659H17c1.103 0 2-.897 2-2v-3c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0 4h-2l-.003 5h-2.545c-.711-1.22-2.022-2-3.452-2s-2.741.78-3.452 2H5v-2.548C6.22 15.741 7 14.43 7 13s-.78-2.741-2-3.452V7h5V5a1 1 0 0 1 2 0v2h5v5h2a1 1 0 0 1 0 2z"></path></g></svg>
-                          GNU Public License v3.0</p>
-                        <a href="https://d3m0n.4re5.com">
-                          <span style="color: #acabab; align-self: end; display: flex; align-items: center;">View project<svg fill="#acabab" viewBox="0 0 24 24" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></span>
-                        </a>
-                  </div>
+          <div class="projects-wrapper" id="slideCaroussel">
+              <div class="project_card">
+                <img src="https://github.com/d3m0n-project/d3m0n_c1/blob/main/d3m0n_c1_preview.png?raw=true" alt="d3m0n c1">                
+                <h1>d3m0n c1</h1>
+                <p style="flex-grow: 1; color: #666; line-height: 1.5;">The world first hacking phone gadget that includes IR, RF, Wifi, Bluetooth hacking, BadUSB and lot more</p>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <p style="gap: 8px; color: #666; display: flex; align-items: center; font-size: 14px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#666"><path d="M17.496 4c-1.425 0-3.378.256-4.597 1.475C10.794 7.58 9.391 9.03 9.388 9.033c-.24.247-.593.354-.923.283-.007 0-2.248-.435-3.948.504l9.694 9.694c.943-1.702.541-3.919.536-3.944a1.002 1.002 0 0 1 .273-.903l3.536-3.535c1.896-1.896 1.516-5.498 1.271-6.929A14.143 14.143 0 0 0 17.496 4zm-.354 5.718a2 2 0 1 1-2.828-2.828 2 2 0 0 1 2.828 2.828z"></path><path d="M20.92 2.384A15.511 15.511 0 0 0 17.496 2c-2.585 0-4.663.713-6.011 2.061A368.762 368.762 0 0 0 8.31 7.273c-1.214-.137-4.077-.203-6.017 1.738a.996.996 0 0 0 0 1.414l11.313 11.313a.997.997 0 0 0 1.414 0c1.954-1.953 1.894-4.814 1.767-6.01l3.184-3.183c3.191-3.191 1.74-9.182 1.677-9.435a1 1 0 0 0-.728-.726zm-2.363 8.748-3.536 3.535a.999.999 0 0 0-.273.903c.005.025.407 2.242-.536 3.944L4.517 9.82c1.7-.938 3.941-.504 3.948-.504.33.07.684-.036.923-.283.003-.003 1.406-1.453 3.512-3.559C14.118 4.256 16.071 4 17.496 4c.947 0 1.793.111 2.332.203.244 1.431.625 5.032-1.271 6.929z"></path><circle cx="15.728" cy="8.304" r="2"></circle><path d="M5 16c-2 1-2 5-2 5s3 0 5-2l-3-3z"></path></svg>
+                    C++</p>
+                  <p style="gap: 8px; color: #666; display: flex; align-items: center; font-size: 14px;">
+                    <svg fill="#666" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 10V7c0-1.103-.897-2-2-2h-3c0-1.654-1.346-3-3-3S8 3.346 8 5H5c-1.103 0-2 .897-2 2v3.881l.659.239C4.461 11.41 5 12.166 5 13s-.539 1.59-1.341 1.88L3 15.119V19c0 1.103.897 2 2 2h3.881l.239-.659C9.41 19.539 10.166 19 11 19s1.59.539 1.88 1.341l.239.659H17c1.103 0 2-.897 2-2v-3c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0 4h-2l-.003 5h-2.545c-.711-1.22-2.022-2-3.452-2s-2.741.78-3.452 2H5v-2.548C6.22 15.741 7 14.43 7 13s-.78-2.741-2-3.452V7h5V5a1 1 0 0 1 2 0v2h5v5h2a1 1 0 0 1 0 2z"></path></svg>
+                    GNU Public License v3.0</p>
+                </div>
+                <a href="https://d3m0n.4re5.com" style="margin-top: auto; text-decoration: none;">
+                  <span style="color: #007bff; display: flex; align-items: center; font-weight: 600; gap: 5px;">View project <svg fill="#007bff" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                </a>
               </div>
-              
-            </div>
+              <div class="project_card">
+                <img src="https://github.com/user-attachments/assets/27bf681e-831c-4273-b2b5-44dbacbd753f" alt="GitHub Repo">                
+                <h1>virtualArch</h1>
+                <p style="flex-grow: 1; color: #666; line-height: 1.5;">A complete minimal computer architecture directly on your browser. 🚀</p>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <p style="gap: 8px; color: #666; display: flex; align-items: center; font-size: 14px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#666"><path d="M17.496 4c-1.425 0-3.378.256-4.597 1.475C10.794 7.58 9.391 9.03 9.388 9.033c-.24.247-.593.354-.923.283-.007 0-2.248-.435-3.948.504l9.694 9.694c.943-1.702.541-3.919.536-3.944a1.002 1.002 0 0 1 .273-.903l3.536-3.535c1.896-1.896 1.516-5.498 1.271-6.929A14.143 14.143 0 0 0 17.496 4zm-.354 5.718a2 2 0 1 1-2.828-2.828 2 2 0 0 1 2.828 2.828z"></path><path d="M20.92 2.384A15.511 15.511 0 0 0 17.496 2c-2.585 0-4.663.713-6.011 2.061A368.762 368.762 0 0 0 8.31 7.273c-1.214-.137-4.077-.203-6.017 1.738a.996.996 0 0 0 0 1.414l11.313 11.313a.997.997 0 0 0 1.414 0c1.954-1.953 1.894-4.814 1.767-6.01l3.184-3.183c3.191-3.191 1.74-9.182 1.677-9.435a1 1 0 0 0-.728-.726zm-2.363 8.748-3.536 3.535a.999.999 0 0 0-.273.903c.005.025.407 2.242-.536 3.944L4.517 9.82c1.7-.938 3.941-.504 3.948-.504.33.07.684-.036.923-.283.003-.003 1.406-1.453 3.512-3.559C14.118 4.256 16.071 4 17.496 4c.947 0 1.793.111 2.332.203.244 1.431.625 5.032-1.271 6.929z"></path><circle cx="15.728" cy="8.304" r="2"></circle><path d="M5 16c-2 1-2 5-2 5s3 0 5-2l-3-3z"></path></svg>
+                    JavaScript</p>
+                  <p style="gap: 8px; color: #666; display: flex; align-items: center; font-size: 14px;">
+                    <svg fill="#666" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 10V7c0-1.103-.897-2-2-2h-3c0-1.654-1.346-3-3-3S8 3.346 8 5H5c-1.103 0-2 .897-2 2v3.881l.659.239C4.461 11.41 5 12.166 5 13s-.539 1.59-1.341 1.88L3 15.119V19c0 1.103.897 2 2 2h3.881l.239-.659C9.41 19.539 10.166 19 11 19s1.59.539 1.88 1.341l.239.659H17c1.103 0 2-.897 2-2v-3c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0 4h-2l-.003 5h-2.545c-.711-1.22-2.022-2-3.452-2s-2.741.78-3.452 2H5v-2.548C6.22 15.741 7 14.43 7 13s-.78-2.741-2-3.452V7h5V5a1 1 0 0 1 2 0v2h5v5h2a1 1 0 0 1 0 2z"></path></svg>
+                    Apache License 2.0</p>
+                </div>
+                <a href="https://github.com/4RE5group/virtualArch" style="margin-top: auto; text-decoration: none;">
+                  <span style="color: #007bff; display: flex; align-items: center; font-weight: 600; gap: 5px;">View project <svg fill="#007bff" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                </a>
+              </div>
           </div>
-          <script>
-            get_file('https://api.github.com/users/4re5group/repos', function (data) {
-                const map = new Map(Object.entries(JSON.parse(data)));
-                map.forEach((_value, key) => {
-                  if(_value['description'] !== null) {
-                    lang = _value['language'];
-                    if(lang === null) {
-                      lang = 'other';
-                    }
-                    document.getElementById('slideCaroussel').innerHTML += `<div class="slide">
-                  <div class="project_card">
-                    <img src="./assets/github.jpg" style="object-fit: cover; margin-right: 10px; margin-left: 10px; border-radius: 5px; width: 95%; height: 200px; ">                
-                        <h1>`+_value['name']+`</h1>
-                        <p style="height: 100%; color: #acabab">`+_value['description']+`</p>
-                        <p style="gap: 5px; color: #acabab; display: flex; align-items: center;">
-                          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#acabab"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="none" d="M17.496 4c-1.425 0-3.378.256-4.597 1.475C10.794 7.58 9.391 9.03 9.388 9.033c-.24.247-.593.354-.923.283-.007 0-2.248-.435-3.948.504l9.694 9.694c.943-1.702.541-3.919.536-3.944a1.002 1.002 0 0 1 .273-.903l3.536-3.535c1.896-1.896 1.516-5.498 1.271-6.929A14.143 14.143 0 0 0 17.496 4zm-.354 5.718a2 2 0 1 1-2.828-2.828 2 2 0 0 1 2.828 2.828z"></path><path d="M20.92 2.384A15.511 15.511 0 0 0 17.496 2c-2.585 0-4.663.713-6.011 2.061A368.762 368.762 0 0 0 8.31 7.273c-1.214-.137-4.077-.203-6.017 1.738a.996.996 0 0 0 0 1.414l11.313 11.313a.997.997 0 0 0 1.414 0c1.954-1.953 1.894-4.814 1.767-6.01l3.184-3.183c3.191-3.191 1.74-9.182 1.677-9.435a1 1 0 0 0-.728-.726zm-2.363 8.748-3.536 3.535a.999.999 0 0 0-.273.903c.005.025.407 2.242-.536 3.944L4.517 9.82c1.7-.938 3.941-.504 3.948-.504.33.07.684-.036.923-.283.003-.003 1.406-1.453 3.512-3.559C14.118 4.256 16.071 4 17.496 4c.947 0 1.793.111 2.332.203.244 1.431.625 5.032-1.271 6.929z"></path><circle cx="15.728" cy="8.304" r="2"></circle><path d="M5 16c-2 1-2 5-2 5s3 0 5-2l-3-3z"></path></g></svg>
-                          `+lang+`</p>
-                        <p style="gap: 5px; color: #acabab; display: flex; align-items: center;">
-                          <svg fill="#acabab" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19 10V7c0-1.103-.897-2-2-2h-3c0-1.654-1.346-3-3-3S8 3.346 8 5H5c-1.103 0-2 .897-2 2v3.881l.659.239C4.461 11.41 5 12.166 5 13s-.539 1.59-1.341 1.88L3 15.119V19c0 1.103.897 2 2 2h3.881l.239-.659C9.41 19.539 10.166 19 11 19s1.59.539 1.88 1.341l.239.659H17c1.103 0 2-.897 2-2v-3c1.654 0 3-1.346 3-3s-1.346-3-3-3zm0 4h-2l-.003 5h-2.545c-.711-1.22-2.022-2-3.452-2s-2.741.78-3.452 2H5v-2.548C6.22 15.741 7 14.43 7 13s-.78-2.741-2-3.452V7h5V5a1 1 0 0 1 2 0v2h5v5h2a1 1 0 0 1 0 2z"></path></g></svg>
-                          `+((_value['license'] == null)?"No license yet":_value['license']['name'])+`</p>
-                        <a href="`+_value['html_url']+`">
-                          <span style="color: #acabab; align-self: end; display: flex; align-items: center;">View project<svg fill="#acabab" viewBox="0 0 24 24" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></span>
-                        </a>
-                  </div>
-              </div>`;
-                  }
-                  
-                })});
-
-
-                // add event
-                const slider = document.querySelector('.slider');
-                const slideTrack = document.querySelector('.slide-track');
-
-                slider.addEventListener('mouseenter', () => {
-                  slider.style.overflowX = 'scroll';
-                  slideTrack.getAnimations()[0].currentTime = 0;
-                  slideTrack.getAnimations()[0].pause();
-                  // slideTrack.style.animation.play = "paused";
-                  // animation-play-state: paused;
-                });
-
-                slider.addEventListener('mouseleave', () => {
-                  slider.style.overflowX = 'hidden';
-                  // slideTrack.getAnimations()[0].playbackRate = 1;
-                  slideTrack.getAnimations()[0].play();
-                });
-          </script>
-
-
           <div style="width: 100%; max-width: 1000px;">
             
           </div>
@@ -481,507 +297,7 @@
             </div>
           </div>
         </section>
-        <section class="home-banners">
-          <div id="need-a-software-div" class="home-banner-manage">
-            <div class="home-container3">
-              <div class="home-left1">
-                <span id="services" class="home-text014 sub-title">
-                  Services
-                </span>
-                <span class="home-text015 title">Need a software?</span>
-                <span class="home-text016">
-                  You've imagined a software but you're not a developer? We can
-                  do that for you!
-                </span>
-                <a href="#services" class="home-link7">
-                  <button class="get_started_btn">
-                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
-                    </svg>
-                
-                    <span class="get_started_btn_text">Get started</span>
-                </button>
-                </a>
-              </div>
-              <div class="home-image-container">
-                <img
-                  alt="pastedImage"
-                  src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDN8fHNvZnR3YXJlfGVufDB8fHx8MTY4NDA3MzUwN3ww&amp;ixlib=rb-4.0.3&amp;w=1200"
-                  class="home-cards-image"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="pricing" class="home-pricing">
-          <div class="home-centered-container">
-            <div class="home-heading">
-              <span class="home-text018 title">
-                Pricing for all kind of businesses
-              </span>
-              <span class="home-text019">
-                Create next-generation solutions for small business customers
-                with pricing options that accommodate everyone.
-              </span>
-              <div class="home-selection">
-                <span id="android_button" onclick="select_service('android')" class="home-text020">Android</span>
-                <span id="windows_button" onclick="select_service('windows')" class="home-text021">Windows</span>
-                <span id="other_button"   onclick="select_service('other')" class="home-text022">Other</span>
-              </div>
-            </div>
-            <div id="windows_prices" class="home-cards1">
-              <div class="home-card home-cards-class">
-                <span class="home-text023">WINDOWS</span>
-                <span class="home-text024">
-                  <span>Small</span>
-                  <span>algorithm</span>
-                </span>
-                <span class="home-text027">$30</span>
-                <a class="home-navlink">
-                  <div class="home-get-started03 template-button" onclick="add_item('win1', '1');">
-                    <span class="home-text028">Purchase</span>
-                  </div>
-                </a>
-                <span class="home-text029">Specifications</span>
-                <div class="home-bullet-points">
-                  <div class="home-point01">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon08"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text031">Made in 2 weeks maximum</span>
-                  </div>
-                  <div class="home-point02">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon10"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text032">
-                      Less than 300 lines of code
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card1 home-cards-class">
-                <span class="home-text033">WINDOWS</span>
-                <span class="home-text034">Huge software</span>
-                <span class="home-text035">
-                  <span>$80</span>
-                  <br />
-                </span>
-                <a class="home-navlink1">
-                  <div class="home-get-started04 template-button" onclick="add_item('win2', '1');">
-                    <span class="home-text038">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text041">Specifications</span>
-                <div class="home-bullet-points1">
-                  <div class="home-point04">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon14"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text043">Made in 2 month maximum</span>
-                  </div>
-                  <div class="home-point05">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon16"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text044">Infinite code length</span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card2 home-cards-class">
-                <span class="home-text045">WINDOWS</span>
-                <span class="home-text046">Big app</span>
-                <span class="home-text047">$50</span>
-                <a class="home-navlink2">
-                  <div class="home-get-started05 template-button" onclick="add_item('win3', '1');">
-                    <span class="home-text048">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text051">Specifications</span>
-                <div class="home-bullet-points2">
-                  <div class="home-point07">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon20"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text053">Made in 4 weeks maximum</span>
-                  </div>
-                  <div class="home-point08">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon22"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text054">
-                      Less that 1000 lines of code
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="android_prices" class="home-cards2">
-              <div class="home-card3 home-cards-class">
-                <span class="home-text055">ANDROID</span>
-                <span class="home-text056">
-                  <span>Small</span>
-                  <span>algorithm</span>
-                </span>
-                <span class="home-text059">$20</span>
-                <a class="home-navlink3">
-                  <div class="home-get-started06 template-button" onclick="add_item('and1', '1');">
-                    <span class="home-text060">Purchase</span>
-                  </div>
-                </a>
-                <span class="home-text061">Specifications</span>
-                <div class="home-bullet-points3">
-                  <div class="home-point10">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon26"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text063">Made in 2 weeks maximum</span>
-                  </div>
-                  <div class="home-point11">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon28"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text064">
-                      Less than 500 lines of code
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card4 home-cards-class">
-                <span class="home-text065">ANDROID</span>
-                <span class="home-text066">Huge software</span>
-                <span class="home-text067">
-                  <span>$60</span>
-                  <br />
-                </span>
-                <a class="home-navlink4">
-                  <div class="home-get-started07 template-button" onclick="add_item('and2', '1');">
-                    <span class="home-text070">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text073">Specifications</span>
-                <div class="home-bullet-points4">
-                  <div class="home-point13">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon32"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text075">Made in 2 month maximum</span>
-                  </div>
-                  <div class="home-point14">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon34"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text076">Infinite code length</span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card5 home-cards-class">
-                <span class="home-text077">ANDROID</span>
-                <span class="home-text078">Big app</span>
-                <span class="home-text079">$45</span>
-                <a class="home-navlink5">
-                  <div class="home-get-started08 template-button" onclick="add_item('and3', '1');">
-                    <span class="home-text080">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text083">Specifications</span>
-                <div class="home-bullet-points5">
-                  <div class="home-point16">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon38"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text085">Made in 4 weeks maximum</span>
-                  </div>
-                  <div class="home-point17">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon40"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text086">
-                      Less that 1000 lines of code
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="other_prices" class="home-cards3">
-              <div class="home-card6 home-cards-class">
-                <span class="home-text087">OTHER</span>
-                <span class="home-text088">Cyber-sec course</span>
-                <span class="home-text089">$25</span>
-                <a class="home-navlink6">
-                  <div class="home-get-started09 template-button" onclick="add_item('oth1', '1');">
-                    <span class="home-text090">Purchase</span>
-                  </div>
-                </a>
-                <span class="home-text091">Specifications</span>
-                <div class="home-bullet-points6">
-                  <div class="home-point19">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon44"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text093">We learn you how to hack a computer remotly</span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card7 home-cards-class">
-                <span class="home-text094">OTHER</span>
-                <span class="home-text095" style="text-align: center;">Info gathering</span>
-                <span class="home-text096">
-                  <span>$60</span>
-                  <br />
-                </span>
-                <a class="home-navlink7">
-                  <div class="home-get-started10 template-button" onclick="add_item('oth2', '1');">
-                    <span class="home-text099">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text102">Specifications</span>
-                <div class="home-bullet-points7">
-                  <div class="home-point21">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon48"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text104">We'll get every infos on a specific target we could find</span>
-                  </div>
-                  <div class="home-point22">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon50"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text105">Results based on infos you give to us</span>
-                  </div>
-                </div>
-              </div>
-              <div class="home-card8 home-cards-class">
-                <span class="home-text106">OTHER</span>
-                <span class="home-text107">Big app</span>
-                <span class="home-text108">$45</span>
-                <a class="home-navlink8">
-                  <div class="home-get-started11 template-button" onclick="add_item('oth3', '1');">
-                    <span class="home-text109">
-                      <span>Purchase</span>
-                      <br />
-                    </span>
-                  </div>
-                </a>
-                <span class="home-text112">Specifications</span>
-                <div class="home-bullet-points8">
-                  <div class="home-point24">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon54"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text114">Made in 4 weeks maximum</span>
-                  </div>
-                  <div class="home-point25">
-                    <svg
-                      viewBox="0 0 877.7142857142857 1024"
-                      class="home-icon56"
-                    >
-                      <path
-                        d="M877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
-                      ></path>
-                    </svg>
-                    <span class="home-text115">
-                      Less that 1000 lines of code
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <script type="text/javascript">
-          //code for services section
-          windows = document.getElementById("windows_prices");
-          windows_button = document.getElementById("windows_button");
-          android = document.getElementById("android_prices");
-          android_button = document.getElementById("android_button");
-          other = document.getElementById("other_prices");
-          other_button = document.getElementById("other_button");
 
-
-          border_color_selected = "#ffffff";
-          border_color_not_selected = "rgba(255, 255, 255, 0.3)";
-
-          height_selected = "auto";
-          height_not_selected = "0px";
-
-          android.style.height = height_not_selected;
-          android.style.opacity = "0";
-          other.style.height = height_not_selected;
-          other.style.opacity = "0";
-          android.style.transform = "scale(0)";
-          other.style.transform = "scale(0)";
-          android.style.position = "absolute";
-          other.style.position = "absolute";
-
-          // border-bottom-width: 2px;
-          // border-color: #ffffff;
-
-          function select_service(service)
-          {
-            if(service == "windows")
-            {
-              windows_button.style.borderColor = border_color_selected;
-              android_button.style.borderColor = border_color_not_selected;
-              other_button.style.borderColor = border_color_not_selected;
-
-              windows.style.height = height_selected;
-              android.style.height = height_not_selected;
-              other.style.height = height_not_selected;
-
-              windows.style.opacity = "1";
-              android.style.opacity = "0";
-              other.style.opacity = "0";
-
-              windows.style.position = "";
-              android.style.position = "absolute";
-              other.style.position = "absolute";
-
-              windows.style.transform = "scale(1)";
-              android.style.transform = "scale(0)";
-              other.style.transform = "scale(0)";
-            }
-            if(service == "android")
-            {
-              windows_button.style.borderColor = border_color_not_selected;
-              android_button.style.borderColor = border_color_selected;
-              other_button.style.borderColor = border_color_not_selected;
-
-              windows.style.height = height_not_selected;
-              android.style.height = height_selected;
-              other.style.height = height_not_selected;
-
-              windows.style.opacity = "0";
-              android.style.opacity = "1";
-              other.style.opacity = "0";
-
-              windows.style.position = "absolute";
-              android.style.position = "";
-              other.style.position = "absolute";
-
-              windows.style.transform = "scale(0)";
-              android.style.transform = "scale(1)";
-              other.style.transform = "scale(0)";
-            }
-            if(service == "other")
-            {
-              windows_button.style.borderColor = border_color_not_selected;
-              android_button.style.borderColor = border_color_not_selected;
-              other_button.style.borderColor = border_color_selected;
-
-              windows.style.height = height_not_selected;
-              android.style.height = height_not_selected;
-              other.style.height = height_selected;
-
-              windows.style.opacity = "0";
-              android.style.opacity = "0";
-              other.style.opacity = "1";
-
-              windows.style.position = "absolute";
-              android.style.position = "absolute";
-              other.style.position = "";
-
-              windows.style.transform = "scale(0)";
-              android.style.transform = "scale(0)";
-              other.style.transform = "scale(1)";
-            }
-          }
-        </script>
         <section class="home-about" style="background-color: #000000; color: white">
           <div class="home-title">
             <span id="about" class="home-text008">About The Company</span>
