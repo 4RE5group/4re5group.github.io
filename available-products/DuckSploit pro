@@ -1,7 +1,7 @@
 name: DuckSploit pro
 id: 1
-description: Best of ducksploit
-price: 9.99
+description: Professionnal version of the DuckSploit tool, it provides a lifetime license to the DuckSploit suite including a Reverse Shell and custom payload generator, a Web interface.
+price: 19.99
 image: https://ducksploit.com/public/playground_assets/pc-600h.png
 link: https://ducksploit.com
 featured: true
