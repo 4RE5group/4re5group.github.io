@@ -1,11 +1,11 @@
 /*
-    4re5 group 2025, all rights reserved.
+    4re5 group 2026, all rights reserved.
 */
 
 var header_url = "/header.html";
 var footer_url = "/footer.html";
 
-// Register the service worker
+// register the service worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -16,22 +16,34 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Function to extract input value from data
+// function to extract input value from data
 function get_import_input(key, data) {
     var regex = new RegExp(key + '="([^"]*)"', 'g');
     var match = regex.exec(data);
     return match ? match[1] : "";
 }
 
-// Returns the float value of a version name
+// returns the float value of a version name
 function get_version(v)
 {
     return (Number(v.replaceAll("beta", "").replaceAll(" ", "").replace(".", "#").replaceAll(".", "").replaceAll("#", ".")));
 }
 
 
-function get_file(url, callback)
+async function get_file(url, callback)
 {
+    if (typeof caches === "undefined")
+    {
+        console.warn("Caching not enabled");
+        const response = await fetch(url).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        });
+        callback(response);
+        return;
+    }
     caches.match(url)
         .then(response => {
             if (response) {
@@ -47,7 +59,6 @@ function get_file(url, callback)
                         return response.text();
                     })
                     .then(text => {
-                        // Store the fetched content in cache
                         caches.open('4re5-cache-v1')
                             .then(cache => {
                                 cache.put(url, new Response(text));
@@ -63,7 +74,7 @@ function get_file(url, callback)
 }
 
 
-// Returns the header html
+// returns the header html
 function get_header_footer(is_header, callback) {
     var url = is_header ? header_url : footer_url;
     get_file(url, callback);

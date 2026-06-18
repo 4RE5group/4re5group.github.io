@@ -91,6 +91,7 @@
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */
   flex-wrap: wrap;
+  justify-content: center;
 }
 .products-carousel::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
@@ -101,7 +102,7 @@
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  /*box-shadow: 0 10px 30px rgba(0,0,0,0.1);*/
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit;
@@ -110,7 +111,7 @@
 }
 .product-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  /*box-shadow: 0 15px 40px rgba(0,0,0,0.15);*/
 }
 .product-image-wrapper {
   width: 100%;
