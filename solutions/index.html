@@ -294,7 +294,7 @@
 
                 i = 0;
                 map.forEach(elem => {
-                    if (elem.disabled != "true" && (nb * max_per_page) > i && i >= ((nb - 1) * max_per_page))
+                    if (elem.disabled != true && elem.disabled != "true" && (nb * max_per_page) > i && i >= ((nb - 1) * max_per_page))
                     {
                         win = false;
                         and = false;
