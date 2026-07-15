@@ -115,7 +115,7 @@ Upon termination, your rights to use certain Services may immediately end.
 
 ## 15. Governing Law
 
-These Terms shall be governed by the laws of [Insert Country/State], without regard to conflict of law principles.
+These Terms shall be governed by the laws of France, without regard to conflict of law principles.
 
 Any disputes arising from these Terms shall be resolved through the courts of [Insert Jurisdiction], unless otherwise required by applicable law.
 
