@@ -117,7 +117,7 @@ Upon termination, your rights to use certain Services may immediately end.
 
 These Terms shall be governed by the laws of France, without regard to conflict of law principles.
 
-Any disputes arising from these Terms shall be resolved through the courts of [Insert Jurisdiction], unless otherwise required by applicable law.
+Any disputes arising from these Terms shall be resolved through the courts of France, unless otherwise required by applicable law.
 
 ## 16. Contact Us
 
