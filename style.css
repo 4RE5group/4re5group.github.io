@@ -121,7 +121,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  height: 100px;
+  height: 90px;
   width: 100%;
   background: var(--dl-color-template-blue-bg);
   border-left: 2px solid white;
