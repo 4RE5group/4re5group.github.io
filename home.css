@@ -2051,6 +2051,12 @@
   color: rgb(196, 196, 196);
   cursor: pointer;
   font-size: 14px;
+  text-align: start;
+
+  a {
+     color: inherit !important;
+	 text-decoration: none !important;
+  }
 }
 .home-text129 {
   color: rgb(196, 196, 196);
