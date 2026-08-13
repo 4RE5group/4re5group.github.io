@@ -200,7 +200,6 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid var(--primary-color);
   border-radius: 25px;
   outline: none;
   overflow: hidden;
@@ -2165,7 +2164,6 @@
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fiveunits);
   justify-content: space-between;
-  border-bottom-width: 1px;
 }
 
 .home-footer {
