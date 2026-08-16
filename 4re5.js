@@ -2,8 +2,10 @@
     4re5 group 2026, all rights reserved.
 */
 
-var header_url = "/header.html";
-var footer_url = "/footer.html";
+
+const website = "https://4re5.com";
+var header_url = website + "/header.html";
+var footer_url = website + "/footer.html";
 
 // register the service worker
 if ('serviceWorker' in navigator) {
